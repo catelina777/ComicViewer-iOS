@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4rO-dR-Muq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Comic Page View Controller-->
+        <scene sceneID="fID-pC-QMk">
+            <objects>
+                <viewController id="4rO-dR-Muq" customClass="ComicPageViewController" customModule="ComicViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cf9-Ex-yNM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comic placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="WGP-xN-Y84">
+                                <rect key="frame" x="0.0" y="72.5" width="375" height="562.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WGP-xN-Y84" secondAttribute="height" multiplier="2:3" id="9fU-8h-evb"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" translatesAutoresizingMaskIntoConstraints="NO" id="wkg-OY-Zhz">
+                                <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
+                                <color key="tintColor" red="0.92286843060000001" green="0.36965408919999998" blue="0.34507226940000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wkg-OY-Zhz" secondAttribute="height" multiplier="1:1" id="ks5-Rm-jMF"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYd-K2-vP5">
+                                <rect key="frame" x="0.0" y="24.5" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcd-dy-Dt1">
+                                        <rect key="frame" x="16" y="9" width="78" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="oRF-T6-gEA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                        <state key="normal" title="All pages">
+                                            <color key="titleColor" red="0.24397414919999999" green="0.25299948449999998" blue="0.33726507430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressAllPagesButton:" destination="4rO-dR-Muq" eventType="touchUpInside" id="hef-qq-kVT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf5-3I-D6Y">
+                                        <rect key="frame" x="312" y="9" width="47" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="JA0-wT-gsu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" red="0.24397414919999999" green="0.25299948449999998" blue="0.33726507430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressCloseButton:" destination="4rO-dR-Muq" eventType="touchUpInside" id="5wo-be-rrs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Bf5-3I-D6Y" secondAttribute="trailing" constant="16" id="3aM-8V-07g"/>
+                                    <constraint firstAttribute="height" constant="48" id="WWD-zE-wdD"/>
+                                    <constraint firstItem="fcd-dy-Dt1" firstAttribute="leading" secondItem="aYd-K2-vP5" secondAttribute="leading" constant="16" id="dgj-jD-iKN"/>
+                                    <constraint firstItem="fcd-dy-Dt1" firstAttribute="centerY" secondItem="aYd-K2-vP5" secondAttribute="centerY" id="nJ5-ZE-GfC"/>
+                                    <constraint firstItem="Bf5-3I-D6Y" firstAttribute="centerY" secondItem="aYd-K2-vP5" secondAttribute="centerY" id="r2n-tn-SQx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WGP-xN-Y84" firstAttribute="leading" secondItem="ehM-nF-j0f" secondAttribute="leading" id="3Ok-fv-bhQ"/>
+                            <constraint firstItem="ehM-nF-j0f" firstAttribute="trailing" secondItem="WGP-xN-Y84" secondAttribute="trailing" id="3xT-mx-23D"/>
+                            <constraint firstItem="ehM-nF-j0f" firstAttribute="trailing" secondItem="aYd-K2-vP5" secondAttribute="trailing" id="45g-Y2-zoM"/>
+                            <constraint firstItem="WGP-xN-Y84" firstAttribute="centerY" secondItem="cf9-Ex-yNM" secondAttribute="centerY" constant="20" id="AnS-eu-gg1"/>
+                            <constraint firstItem="wkg-OY-Zhz" firstAttribute="centerY" secondItem="cf9-Ex-yNM" secondAttribute="centerY" id="WbF-xK-ZLY"/>
+                            <constraint firstItem="wkg-OY-Zhz" firstAttribute="centerX" secondItem="cf9-Ex-yNM" secondAttribute="centerX" id="YI6-bT-rZn"/>
+                            <constraint firstItem="aYd-K2-vP5" firstAttribute="leading" secondItem="ehM-nF-j0f" secondAttribute="leading" id="axc-hh-qUa"/>
+                            <constraint firstItem="WGP-xN-Y84" firstAttribute="top" secondItem="aYd-K2-vP5" secondAttribute="bottom" id="cjG-Sl-wsE"/>
+                            <constraint firstItem="wkg-OY-Zhz" firstAttribute="width" secondItem="WGP-xN-Y84" secondAttribute="width" multiplier="0.4" id="vcB-g7-oec"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ehM-nF-j0f"/>
+                    </view>
+                    <connections>
+                        <outlet property="allPagesButton" destination="fcd-dy-Dt1" id="gUs-oq-ghe"/>
+                        <outlet property="closeButton" destination="Bf5-3I-D6Y" id="OGo-9a-DD2"/>
+                        <outlet property="comicImageView" destination="WGP-xN-Y84" id="siq-u8-Ypg"/>
+                        <outlet property="likeImageView" destination="wkg-OY-Zhz" id="rlx-rd-72F"/>
+                        <outlet property="menuView" destination="aYd-K2-vP5" id="OmG-bw-9fi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C5n-gP-cB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="328.80000000000001" y="-176.76161919040482"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="comic placeholder" width="1131" height="1600"/>
+        <image name="favorite" width="48" height="48"/>
+    </resources>
+</document>

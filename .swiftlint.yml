@@ -1,0 +1,7 @@
+excluded:
+  - Carthage
+  - Pods
+  - R.generated.swift
+
+disabled_rules:
+  - identifier_name	
