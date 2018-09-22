@@ -10,8 +10,10 @@
 		0603F419210ABA7D008ED237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0603F418210ABA7D008ED237 /* AppDelegate.swift */; };
 		0603F420210ABA7E008ED237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0603F41F210ABA7E008ED237 /* Assets.xcassets */; };
 		0603F423210ABA7E008ED237 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0603F421210ABA7E008ED237 /* LaunchScreen.storyboard */; };
-		0603F44A210ABDB9008ED237 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F449210ABDB9008ED237 /* Realm.framework */; };
-		0603F44C210ABDC4008ED237 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F44B210ABDC4008ED237 /* RealmSwift.framework */; };
+		0605D3A62156425900868C49 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F44B210ABDC4008ED237 /* RealmSwift.framework */; };
+		0605D3A72156425900868C49 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F44B210ABDC4008ED237 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0605D3A82156425900868C49 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F449210ABDB9008ED237 /* Realm.framework */; };
+		0605D3A92156425900868C49 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F449210ABDB9008ED237 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		064F309C214C18A6001564F1 /* ReadComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309B214C18A6001564F1 /* ReadComicViewController.swift */; };
 		064F309E214C18B1001564F1 /* ReadComicViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309D214C18B1001564F1 /* ReadComicViewPresenter.swift */; };
 		064F30A0214C18DD001564F1 /* ReadComicViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309F214C18DD001564F1 /* ReadComicViewDatasource.swift */; };
@@ -44,6 +46,21 @@
 		06F2A8BE214FF0F9004D2C91 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F2A8BD214FF0F9004D2C91 /* Icons.xcassets */; };
 		DB775ED6C9DBCC973D856336 /* Pods_ComicViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2005EB82EC38FB4C0B487946 /* Pods_ComicViewer.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0605D3AA2156425900868C49 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0605D3A92156425900868C49 /* Realm.framework in Embed Frameworks */,
+				0605D3A72156425900868C49 /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0603F415210ABA7D008ED237 /* ComicViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,8 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0603F44C210ABDC4008ED237 /* RealmSwift.framework in Frameworks */,
-				0603F44A210ABDB9008ED237 /* Realm.framework in Frameworks */,
+				0605D3A82156425900868C49 /* Realm.framework in Frameworks */,
+				0605D3A62156425900868C49 /* RealmSwift.framework in Frameworks */,
 				DB775ED6C9DBCC973D856336 /* Pods_ComicViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +308,7 @@
 				0603F412210ABA7D008ED237 /* Frameworks */,
 				0603F413210ABA7D008ED237 /* Resources */,
 				BBD0754C6868E95A733B8C22 /* [CP] Embed Pods Frameworks */,
+				0605D3AA2156425900868C49 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -381,7 +399,6 @@
 			);
 			name = Carthage;
 			outputFileListPaths = (
-				"$(SRCROOT)/carthage_output.xcfilelist",
 			);
 			outputPaths = (
 			);
