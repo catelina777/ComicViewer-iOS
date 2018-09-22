@@ -16,6 +16,7 @@ protocol ComicPagePresenter: class {
     func disappear(menuView: UIView)
     func animate(with imageView: UIImageView)
     func addFavorite()
+    func exportCSV()
 }
 
 final class ComicPageViewPresenter: ComicPagePresenter {
@@ -36,6 +37,7 @@ final class ComicPageViewPresenter: ComicPagePresenter {
 extension ComicPageViewPresenter {
 
     func showReadComic() {
+        exportCSV()
         view.showReadComic()
     }
 
@@ -64,6 +66,25 @@ extension ComicPageViewPresenter {
         Realm.execute { _ in
             let like = Like(index: self.index)
             self.comic.activity?.likes.append(like)
+        }
+    }
+
+    func exportCSV() {
+        guard let likes = comic.activity?.likes else { return }
+        let arrayLikes = Array(likes)
+        var csv = "epoch_time,index\n"
+        let name = "\(comic.name)_\(Date().timeIntervalSince1970).csv"
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let path = paths[0].appendingPathComponent(name)
+        arrayLikes.forEach {
+            let newColumn = "\($0.date.timeIntervalSince1970),\($0.index)\n"
+            csv.append(newColumn)
+        }
+        do {
+            try csv.write(to: path, atomically: true, encoding: .utf8)
+            print("saved at \(path)")
+        } catch let error {
+            print(error)
         }
     }
 }
