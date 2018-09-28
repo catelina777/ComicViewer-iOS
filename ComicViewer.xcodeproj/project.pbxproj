@@ -14,6 +14,7 @@
 		0605D3A72156425900868C49 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F44B210ABDC4008ED237 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0605D3A82156425900868C49 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F449210ABDB9008ED237 /* Realm.framework */; };
 		0605D3A92156425900868C49 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F449210ABDB9008ED237 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		063E5235215E0D290063096F /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063E5234215E0D290063096F /* Turn.swift */; };
 		064F309C214C18A6001564F1 /* ReadComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309B214C18A6001564F1 /* ReadComicViewController.swift */; };
 		064F309E214C18B1001564F1 /* ReadComicViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309D214C18B1001564F1 /* ReadComicViewPresenter.swift */; };
 		064F30A0214C18DD001564F1 /* ReadComicViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309F214C18DD001564F1 /* ReadComicViewDatasource.swift */; };
@@ -70,6 +71,7 @@
 		0603F424210ABA7E008ED237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0603F449210ABDB9008ED237 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		0603F44B210ABDC4008ED237 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		063E5234215E0D290063096F /* Turn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		064F309B214C18A6001564F1 /* ReadComicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicViewController.swift; sourceTree = "<group>"; };
 		064F309D214C18B1001564F1 /* ReadComicViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicViewPresenter.swift; sourceTree = "<group>"; };
 		064F309F214C18DD001564F1 /* ReadComicViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicViewDatasource.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				06F2A8B5214FC8B7004D2C91 /* Comic.swift */,
 				06F2A8B7214FC8CE004D2C91 /* Activity.swift */,
 				06F2A8B9214FCB03004D2C91 /* Like.swift */,
+				063E5234215E0D290063096F /* Turn.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				06C54875210AD6E30081E54A /* SelectComicViewDatasource.swift in Sources */,
 				064F309E214C18B1001564F1 /* ReadComicViewPresenter.swift in Sources */,
 				064F30B1214C23A8001564F1 /* ReadComicViewDatasource+UIPageViewControllerDelegate.swift in Sources */,
+				063E5235215E0D290063096F /* Turn.swift in Sources */,
 				06C54871210AD2F30081E54A /* SelectComicViewController.swift in Sources */,
 				06F2A8AD214FC159004D2C91 /* Realm.extension.swift in Sources */,
 				06F2A8B6214FC8B7004D2C91 /* Comic.swift in Sources */,

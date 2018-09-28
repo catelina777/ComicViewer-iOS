@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol ReadComicPresenter: class {
     init(user: User, comic: Comic, images: [UIImage], currentIndex: Int)
@@ -15,6 +16,7 @@ protocol ReadComicPresenter: class {
     func getPreviousPage() -> ComicPageViewController?
     func getNextPage() -> ComicPageViewController?
     func updateCurrentIndex(index: Int)
+    func recordDisplayedPage(at index: Int)
 }
 
 final class ReadComicViewPresenter: ReadComicPresenter {
@@ -66,5 +68,13 @@ extension ReadComicViewPresenter {
 
     func updateCurrentIndex(index: Int) {
         currentIndex = index
+    }
+
+    func recordDisplayedPage(at index: Int) {
+        Realm.execute { _ in
+            self.comic.activity?.showCounts[index] += 1
+            let turn = Turn(index: index)
+            self.comic.activity?.turningHistory.append(turn)
+        }
     }
 }
