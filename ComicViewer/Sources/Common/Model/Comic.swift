@@ -16,9 +16,9 @@ class Comic: Object {
     @objc dynamic var bookmarkIndex = 0
     @objc dynamic var date = Date()
 
-    convenience init(name: String) {
+    convenience init(name: String, numOfPages: Int) {
         self.init()
         self.name = name
-        self.activity = Activity()
+        self.activity = Activity(numOfpages: numOfPages)
     }
 }

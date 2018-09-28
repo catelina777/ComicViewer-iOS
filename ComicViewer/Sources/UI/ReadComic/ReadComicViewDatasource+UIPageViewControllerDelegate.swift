@@ -19,6 +19,7 @@ extension ReadComicViewDatasource: UIPageViewControllerDelegate {
             guard let vc = currentVC as? ComicPageViewController else { return }
             let index = vc.presenter.index
             presenter.updateCurrentIndex(index: index)
+            presenter.recordDisplayedPage(at: index)
             print("transitioned to \(index)")
         }
     }

@@ -12,4 +12,13 @@ import RealmSwift
 class Activity: Object {
 
     let likes = List<Like>()
+    let turningHistory = List<Turn>()
+    let showCounts = List<Int>()
+
+    convenience init(numOfpages: Int) {
+        self.init()
+        (0..<numOfpages).forEach { _ in
+            showCounts.append(0)
+        }
+    }
 }
