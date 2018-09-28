@@ -13,6 +13,7 @@ class Comic: Object {
 
     @objc dynamic var name = ""
     @objc dynamic var activity: Activity?
+    @objc dynamic var bookmarkIndex = 0
     @objc dynamic var date = Date()
 
     convenience init(name: String) {
