@@ -75,14 +75,24 @@ extension SelectComicViewPresenter {
 
     func showReadComic(name: String, index: Int) {
         let images = comicPages(with: name)
-        let comic = Comic(name: name)
-        Realm.execute { realm in
-            self.user.comics.append(comic)
-            realm.add(self.user, update: true)
-        }
+        let comic = self.comic(name: name)
         view.showReadComic(user: user,
                            comic: comic,
                            images: images,
-                           index: index)
+                           index: comic.bookmarkIndex)
+    }
+
+    private func comic(name: String) -> Comic {
+        let comics = self.user.comics.filter("name == '\(name)'")
+        if let comic = comics.first {
+            return comic
+        } else {
+            let comic = Comic(name: name)
+            Realm.execute { realm in
+                self.user.comics.append(comic)
+                realm.add(self.user, update: true)
+            }
+            return comic
+        }
     }
 }

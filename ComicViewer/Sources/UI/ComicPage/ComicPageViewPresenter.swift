@@ -37,6 +37,7 @@ final class ComicPageViewPresenter: ComicPagePresenter {
 extension ComicPageViewPresenter {
 
     func showReadComic() {
+        putBookmark(at: index)
         exportCSV()
         view.showReadComic()
     }
@@ -85,6 +86,12 @@ extension ComicPageViewPresenter {
             print("saved at \(path)")
         } catch let error {
             print(error)
+        }
+    }
+
+    private func putBookmark(at index: Int) {
+        Realm.execute { _ in
+            self.comic.bookmarkIndex = index
         }
     }
 }
