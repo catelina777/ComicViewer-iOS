@@ -61,7 +61,7 @@ extension ComicPageViewController {
     }
 
     func prepareGestures() {
-        let doubleTapGR = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap))
+        let doubleTapGR = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(sender:)))
         doubleTapGR.numberOfTapsRequired = 2
         self.view.addGestureRecognizer(doubleTapGR)
 
@@ -70,8 +70,10 @@ extension ComicPageViewController {
         self.view.addGestureRecognizer(singleTapGR)
     }
 
-    @objc func didDoubleTap() {
-        presenter.addFavorite()
+    @objc func didDoubleTap(sender: UITapGestureRecognizer) {
+        let tapPoint = sender.location(in: self.view)
+        presenter.addFavorite(locX: Double(tapPoint.x),
+                              locY: Double(tapPoint.y))
         presenter.animate(with: likeImageView)
     }
 

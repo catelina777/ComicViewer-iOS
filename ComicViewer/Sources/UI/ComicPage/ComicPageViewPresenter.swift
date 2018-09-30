@@ -15,7 +15,7 @@ protocol ComicPagePresenter: class {
     func showReadComic()
     func disappear(menuView: UIView)
     func animate(with imageView: UIImageView)
-    func addFavorite()
+    func addFavorite(locX: Double, locY: Double)
     func exportCSV()
 }
 
@@ -63,9 +63,11 @@ extension ComicPageViewPresenter {
         })
     }
 
-    func addFavorite() {
+    func addFavorite(locX: Double, locY: Double) {
         Realm.execute { _ in
-            let like = Like(index: self.index)
+            let like = Like(index: self.index,
+                            locX: locX,
+                            locY: locY)
             self.comic.activity?.likes.append(like)
         }
     }
