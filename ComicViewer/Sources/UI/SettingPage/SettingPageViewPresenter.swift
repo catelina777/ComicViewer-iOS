@@ -40,12 +40,13 @@ extension SettingPageViewPresenter {
     }
 
     func setUser(by name: String) {
-        Realm.execute { realm in
-            self.user = realm.object(ofType: User.self,
+        Realm.executeOnMainThread { [weak self] realm in
+            guard let me = self else { return }
+            me.user = realm.object(ofType: User.self,
                                      forPrimaryKey: name)
-            if self.user == nil {
-                self.user = User(name: name)
-                realm.add(self.user)
+            if me.user == nil {
+                me.user = User(name: name)
+                realm.add(me.user)
                 print("I created because -\(name)- does not exist")
             } else {
                 print("I don't create because -\(name)- existed")

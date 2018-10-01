@@ -12,13 +12,12 @@ import RealmSwift
 class Comic: Object {
 
     @objc dynamic var name = ""
-    @objc dynamic var activity: Activity?
+    let activities = List<Activity>()
     @objc dynamic var bookmarkIndex = 0
     @objc dynamic var date = Date()
 
-    convenience init(name: String, numOfPages: Int) {
+    convenience init(name: String) {
         self.init()
         self.name = name
-        self.activity = Activity(numOfpages: numOfPages)
     }
 }

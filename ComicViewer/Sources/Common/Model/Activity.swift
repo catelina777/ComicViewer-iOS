@@ -14,6 +14,8 @@ class Activity: Object {
     let likes = List<Like>()
     let turningHistory = List<Turn>()
     let showCounts = List<Int>()
+    let motions = List<Motion>()
+    @objc dynamic var date = Date()
 
     convenience init(numOfpages: Int) {
         self.init()

@@ -27,6 +27,7 @@
 		064F30B1214C23A8001564F1 /* ReadComicViewDatasource+UIPageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F30B0214C23A8001564F1 /* ReadComicViewDatasource+UIPageViewControllerDelegate.swift */; };
 		064F30B3214C2557001564F1 /* ComicPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064F30B2214C2557001564F1 /* ComicPage.storyboard */; };
 		064F30B6214C2C4D001564F1 /* NSObjectProtocol.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F30B5214C2C4D001564F1 /* NSObjectProtocol.extension.swift */; };
+		066C09D32161228600B53006 /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C09D22161228600B53006 /* Motion.swift */; };
 		0679507C214D3BF700BC64DA /* Placeholders.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0679507B214D3BF700BC64DA /* Placeholders.xcassets */; };
 		06C5486C210AD0DB0081E54A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5486B210AD0DB0081E54A /* R.generated.swift */; };
 		06C5486F210AD2E40081E54A /* SelectComic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06C5486E210AD2E40081E54A /* SelectComic.storyboard */; };
@@ -84,6 +85,7 @@
 		064F30B0214C23A8001564F1 /* ReadComicViewDatasource+UIPageViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReadComicViewDatasource+UIPageViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		064F30B2214C2557001564F1 /* ComicPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicPage.storyboard; sourceTree = "<group>"; };
 		064F30B5214C2C4D001564F1 /* NSObjectProtocol.extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocol.extension.swift; sourceTree = "<group>"; };
+		066C09D22161228600B53006 /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
 		0679507B214D3BF700BC64DA /* Placeholders.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Placeholders.xcassets; sourceTree = "<group>"; };
 		06C5486B210AD0DB0081E54A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		06C5486E210AD2E40081E54A /* SelectComic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectComic.storyboard; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				06F2A8B7214FC8CE004D2C91 /* Activity.swift */,
 				06F2A8B9214FCB03004D2C91 /* Like.swift */,
 				063E5234215E0D290063096F /* Turn.swift */,
+				066C09D22161228600B53006 /* Motion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				06F2A8BA214FCB03004D2C91 /* Like.swift in Sources */,
 				064F309C214C18A6001564F1 /* ReadComicViewController.swift in Sources */,
 				06C5486C210AD0DB0081E54A /* R.generated.swift in Sources */,
+				066C09D32161228600B53006 /* Motion.swift in Sources */,
 				06C54873210AD6D40081E54A /* SelectComicViewPresenter.swift in Sources */,
 				064F30AB214C1D49001564F1 /* SelectComicViewDatasource+UICollectionViewDataSource.swift in Sources */,
 				06F2A8BC214FE127004D2C91 /* ComicPageViewPresenter.swift in Sources */,

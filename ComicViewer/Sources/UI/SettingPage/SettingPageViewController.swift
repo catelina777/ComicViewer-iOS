@@ -49,6 +49,7 @@ extension SettingPageViewController {
     func showSelectComic(with user: User) {
         let vc = R.storyboard.selectComic.instantiateInitialViewController()!
         vc.set(user: user)
+        nameTextField.endEditing(true)
         navigationController?.pushViewController(vc,
                                                  animated: true)
     }

@@ -28,7 +28,7 @@ final class ComicPageViewController: UIViewController, ComicPageView {
 
     var presenter: ComicPagePresenter!
 
-    var comicImage: UIImage!
+    weak var comicImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +52,12 @@ extension ComicPageViewController {
                      completion: nil)
     }
 
-    func set(image: UIImage, user: User, comic: Comic, index: Int) {
+    func set(image: UIImage, user: User, comic: Comic, activity: Activity, index: Int) {
         self.comicImage = image
         presenter = ComicPageViewPresenter(view: self,
                                            user: user,
                                            comic: comic,
+                                           activity: activity,
                                            index: index)
     }
 
