@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 protocol ComicPagePresenter: class {
-    init(view: ComicPageView, user: User, comic: Comic, index: Int)
+    init(view: ComicPageView, user: User, comic: Comic, activity: Activity, index: Int)
     var index: Int { get }
     func showReadComic()
     func disappear(menuView: UIView)
@@ -21,15 +21,17 @@ protocol ComicPagePresenter: class {
 
 final class ComicPageViewPresenter: ComicPagePresenter {
 
-    private let view: ComicPageView
+    private weak var view: ComicPageView?
     private var user: User
     private var comic: Comic
+    private var activity: Activity
     var index: Int
 
-    init(view: ComicPageView, user: User, comic: Comic, index: Int) {
+    init(view: ComicPageView, user: User, comic: Comic, activity: Activity, index: Int) {
         self.view = view
         self.user = user
         self.comic = comic
+        self.activity = activity
         self.index = index
     }
 }
@@ -39,7 +41,7 @@ extension ComicPageViewPresenter {
     func showReadComic() {
         putBookmark(at: index)
         exportCSV()
-        view.showReadComic()
+        view?.showReadComic()
     }
 
     func disappear(menuView: UIView) {
@@ -64,16 +66,17 @@ extension ComicPageViewPresenter {
     }
 
     func addFavorite(locX: Double, locY: Double) {
-        Realm.execute { _ in
-            let like = Like(index: self.index,
+        Realm.executeOnMainThread { [weak self] _ in
+            guard let me = self else { return }
+            let like = Like(index: me.index,
                             locX: locX,
                             locY: locY)
-            self.comic.activity?.likes.append(like)
+            me.activity.likes.append(like)
         }
     }
 
     func exportCSV() {
-        guard let likes = comic.activity?.likes else { return }
+        let likes = activity.likes
         let arrayLikes = Array(likes)
         var csv = "epoch_time,index\n"
         let name = "\(comic.name)_\(Date().timeIntervalSince1970).csv"
@@ -92,8 +95,9 @@ extension ComicPageViewPresenter {
     }
 
     private func putBookmark(at index: Int) {
-        Realm.execute { _ in
-            self.comic.bookmarkIndex = index
+        Realm.executeOnMainThread { [weak self] _ in
+            guard let me = self else { return }
+            me.comic.bookmarkIndex = index
         }
     }
 }

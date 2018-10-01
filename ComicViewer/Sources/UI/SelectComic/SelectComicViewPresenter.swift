@@ -20,7 +20,7 @@ protocol SelectComicPresenter: class {
 
 final class SelectComicViewPresenter: SelectComicPresenter {
 
-    private let view: SelectComicView
+    private weak var view: SelectComicView?
     private var user: User
 
     // TODO: Enter names of comics here
@@ -77,20 +77,25 @@ extension SelectComicViewPresenter {
         let images = comicPages(with: name)
         let comic = self.comic(name: name,
                                numOfPages: images.count)
-        view.showReadComic(user: user,
+        view?.showReadComic(user: user,
                            comic: comic,
                            images: images,
                            index: comic.bookmarkIndex)
     }
 
     private func comic(name: String, numOfPages: Int) -> Comic {
-        let comics = self.user.comics.filter("name == '\(name)'")
+        let comics = self.user.comics
+            .filter("name == '\(name)'")
+        let newActivity = Activity(numOfpages: numOfPages)
         if let comic = comics.first {
+            Realm.executeOnMainThread { _ in
+                comic.activities.append(newActivity)
+            }
             return comic
         } else {
-            let comic = Comic(name: name,
-                              numOfPages: numOfPages)
-            Realm.execute { realm in
+            let comic = Comic(name: name)
+            Realm.executeOnMainThread { realm in
+                comic.activities.append(newActivity)
                 self.user.comics.append(comic)
                 realm.add(self.user, update: true)
             }

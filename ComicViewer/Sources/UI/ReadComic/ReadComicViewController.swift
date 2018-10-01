@@ -10,16 +10,32 @@ import UIKit
 
 protocol ReadComicView: class {
     func set(user: User, comic: Comic, images: [UIImage], currentIndex: Int)
+    func showSelectComic()
 }
 
 final class ReadComicViewController: UIPageViewController, ReadComicView {
 
     var presenter: ReadComicPresenter!
-    lazy var datasource = ReadComicViewDatasource(presenter: self.presenter)
+    private lazy var datasource = ReadComicViewDatasource(presenter: self.presenter)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         datasource.prepare(with: self)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        presenter.didReceiveMemoryWarning()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+         presenter.viewDidAppear()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+         presenter.viewWillDisappear()
     }
 }
 
@@ -30,5 +46,10 @@ extension ReadComicViewController {
                                            comic: comic,
                                            images: images,
                                            currentIndex: currentIndex)
+    }
+
+    func showSelectComic() {
+        self.dismiss(animated: true,
+                     completion: nil)
     }
 }

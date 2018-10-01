@@ -9,18 +9,32 @@
 import Foundation
 import RealmSwift
 
+var realmConfiguration: Realm.Configuration?
+
 extension Realm {
 
-    static func execute(_ completion: @escaping(Realm) -> Void) {
-        autoreleasepool {
-            do {
-                let realm = try Realm()
-                try realm.write {
-                    completion(realm)
-                }
-            } catch let error {
-                print(error)
+    static var current: Realm? {
+        if let configuration = realmConfiguration {
+            return try? Realm(configuration: configuration)
+        } else {
+            let configuration = Realm.Configuration(
+                deleteRealmIfMigrationNeeded: true
+            )
+            return try? Realm(configuration: configuration)
+        }
+    }
+
+    static func executeOnMainThread(realm: Realm? = nil, _ execution: @escaping(Realm) -> Void) {
+        if let realm = realm {
+            try? realm.write {
+                execution(realm)
             }
+            return
+        }
+
+        guard let currentRealm = Realm.current else { return }
+        try? currentRealm.write {
+            execution(currentRealm)
         }
     }
 }
