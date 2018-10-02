@@ -12,6 +12,8 @@ extension ReadComicPageViewDatasource: UIPageViewControllerDataSource {
 
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard !presenter.isTransitioning
+        else { return nil }
         let vc = presenter.getNextPage()
         print("before page")
         return vc
@@ -19,6 +21,8 @@ extension ReadComicPageViewDatasource: UIPageViewControllerDataSource {
 
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard !presenter.isTransitioning
+        else { return nil }
         let vc = presenter.getPreviousPage()
         print("after page")
         return vc
