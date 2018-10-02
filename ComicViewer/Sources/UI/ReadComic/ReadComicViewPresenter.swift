@@ -15,6 +15,7 @@ protocol ReadComicPresenter: class {
     var images: [UIImage] { get }
     var index: Int { get }
     func showSelectComic()
+    func showAllPages()
     func disappear(menuView: UIView)
 }
 
@@ -40,6 +41,10 @@ extension ReadComicViewPresenter {
 
     func showSelectComic() {
         view?.showSelectComic()
+    }
+
+    func showAllPages() {
+        view?.showAllPages()
     }
 
     func disappear(menuView: UIView) {
