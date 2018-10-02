@@ -10,4 +10,8 @@ import UIKit
 
 extension FavoritePagesViewDatasource: UICollectionViewDelegate {
 
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        presenter.showReadComic(to: indexPath.row)
+    }
 }

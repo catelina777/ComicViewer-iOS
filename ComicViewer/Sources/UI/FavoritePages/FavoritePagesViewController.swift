@@ -10,6 +10,7 @@ import UIKit
 
 protocol FavoritePagesView: class {
     func showReadComic()
+    func showReadComic(to index: Int)
 }
 
 final class FavoritePagesViewController: UIViewController, FavoritePagesView {
@@ -33,6 +34,14 @@ final class FavoritePagesViewController: UIViewController, FavoritePagesView {
 extension FavoritePagesViewController {
 
     func showReadComic() {
+        self.dismiss(animated: true,
+                     completion: nil)
+    }
+
+    func showReadComic(to index: Int) {
+        if let parentVC = self.presentingViewController as? ReadComicViewController {
+            parentVC.readComicPageViewController.presenter.movePage(to: index)
+        }
         self.dismiss(animated: true,
                      completion: nil)
     }

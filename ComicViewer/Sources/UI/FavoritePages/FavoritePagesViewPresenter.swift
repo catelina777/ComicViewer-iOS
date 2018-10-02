@@ -11,12 +11,13 @@ import UIKit
 protocol FavoritePagesPresenter: class {
     init(view: FavoritePagesView, images: [UIImage], comic: Comic)
     func showReadComic()
+    func showReadComic(to index: Int)
     var numOfImages: Int { get }
     func image(at index: Int) -> UIImage
     func like(at index: Int) -> Bool
 }
 
-final class FavoritePagesViewPresenter: FavoritePagesPresenter  {
+final class FavoritePagesViewPresenter: FavoritePagesPresenter {
 
     private weak var view: FavoritePagesView?
     private let images: [UIImage]
@@ -48,6 +49,10 @@ extension FavoritePagesViewPresenter {
 
     func showReadComic() {
         view?.showReadComic()
+    }
+
+    func showReadComic(to index: Int) {
+        view?.showReadComic(to: index)
     }
 
     func image(at index: Int) -> UIImage {

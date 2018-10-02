@@ -11,7 +11,7 @@ import RealmSwift
 import CoreMotion
 
 protocol ReadComicPagePresenter: class {
-    init(user: User, comic: Comic, images: [UIImage], currentIndex: Int)
+    init(view: ReadComicPageView, user: User, comic: Comic, images: [UIImage], currentIndex: Int)
     func getPage(by index: Int) -> ComicPageViewController?
     func getCurrentPage() -> ComicPageViewController?
     func getPreviousPage() -> ComicPageViewController?
@@ -23,6 +23,7 @@ protocol ReadComicPagePresenter: class {
     func didReceiveMemoryWarning()
     var isTransitioning: Bool { get }
     func set(isTransitioning: Bool)
+    func movePage(to index: Int)
 }
 
 final class ReadComicPageViewPresenter: ReadComicPagePresenter {
@@ -39,8 +40,8 @@ final class ReadComicPageViewPresenter: ReadComicPagePresenter {
 
     var isTransitioning = false
 
-
-    init(user: User, comic: Comic, images: [UIImage], currentIndex: Int) {
+    init(view: ReadComicPageView, user: User, comic: Comic, images: [UIImage], currentIndex: Int) {
+        self.view = view
         self.user = user
         self.comic = comic
         self.activity = comic.activities.sorted(byKeyPath: "date", ascending: false).first!
@@ -122,5 +123,9 @@ extension ReadComicPageViewPresenter {
 
     func set(isTransitioning: Bool) {
         self.isTransitioning = isTransitioning
+    }
+
+    func movePage(to index: Int) {
+        view?.movePage(to: index)
     }
 }
