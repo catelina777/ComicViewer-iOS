@@ -46,7 +46,7 @@ extension SelectComicViewController {
         vc.set(user: user,
                comic: comic,
                images: images,
-               currentIndex: index)
+               index: index)
         navigationController?.present(vc,
                                       animated: true,
                                       completion: nil)

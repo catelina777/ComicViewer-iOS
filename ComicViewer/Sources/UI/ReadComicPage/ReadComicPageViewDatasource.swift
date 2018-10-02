@@ -1,5 +1,5 @@
 //
-//  ReadComicViewDatasource.swift
+//  ReadComicPageViewDatasource.swift
 //  ComicViewer
 //
 //  Created by Ryuhei Kaminishi on 2018/09/15.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-final class ReadComicViewDatasource: NSObject {
+final class ReadComicPageViewDatasource: NSObject {
 
-    let presenter: ReadComicPresenter
+    let presenter: ReadComicPagePresenter
 
-    init(presenter: ReadComicPresenter) {
+    init(presenter: ReadComicPagePresenter) {
         self.presenter = presenter
     }
 }
 
-extension ReadComicViewDatasource {
+extension ReadComicPageViewDatasource {
 
     func prepare(with pageViewController: UIPageViewController) {
         pageViewController.dataSource = self

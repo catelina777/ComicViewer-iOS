@@ -1,5 +1,5 @@
 //
-//  ReadComicViewDatasource+UIPageViewControllerDelegate.swift
+//  ReadComicPageViewDatasource+UIPageViewControllerDelegate.swift
 //  ComicViewer
 //
 //  Created by Ryuhei Kaminishi on 2018/09/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ReadComicViewDatasource: UIPageViewControllerDelegate {
+extension ReadComicPageViewDatasource: UIPageViewControllerDelegate {
 
     func pageViewController(_ pageViewController: UIPageViewController,
                             didFinishAnimating finished: Bool,

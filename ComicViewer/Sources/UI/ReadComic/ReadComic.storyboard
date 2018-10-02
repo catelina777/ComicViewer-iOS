@@ -1,19 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Wk-PC-Y1C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="65Q-BJ-q1o">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Read Comic View Controller-->
-        <scene sceneID="uA8-FG-ljP">
+        <scene sceneID="Cuy-Hm-KpL">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="8Wk-PC-Y1C" customClass="ReadComicViewController" customModule="ComicViewer" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tOu-7Z-b4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="65Q-BJ-q1o" customClass="ReadComicViewController" customModule="ComicViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hoi-4b-4yE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5X-U9-Vg8">
+                                <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJJ-ZB-4UQ">
+                                        <rect key="frame" x="16" y="9" width="70" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="OnP-zZ-vsM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <state key="normal" title="All pages">
+                                            <color key="titleColor" red="0.24397414919999999" green="0.25299948449999998" blue="0.33726507430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressAllPages:" destination="65Q-BJ-q1o" eventType="touchUpInside" id="J9Y-6q-3WY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJQ-rt-c9X">
+                                        <rect key="frame" x="315" y="9" width="44" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="jmF-99-rXo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" red="0.24397414919999999" green="0.25299948449999998" blue="0.33726507430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressClose:" destination="65Q-BJ-q1o" eventType="touchUpInside" id="NLl-Hb-fLe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TJJ-ZB-4UQ" firstAttribute="leading" secondItem="u5X-U9-Vg8" secondAttribute="leading" constant="16" id="RkZ-8I-tSY"/>
+                                    <constraint firstAttribute="height" constant="48" id="a9U-IU-vje"/>
+                                    <constraint firstItem="TJJ-ZB-4UQ" firstAttribute="centerY" secondItem="u5X-U9-Vg8" secondAttribute="centerY" id="aGe-1y-wmo"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="oau-ev-byU"/>
+                                    <constraint firstItem="kJQ-rt-c9X" firstAttribute="centerY" secondItem="u5X-U9-Vg8" secondAttribute="centerY" id="s45-P5-zWF"/>
+                                    <constraint firstAttribute="trailing" secondItem="kJQ-rt-c9X" secondAttribute="trailing" constant="16" id="uOQ-hg-1VK"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7s-Gd-xKm">
+                                <rect key="frame" x="0.0" y="68" width="375" height="599"/>
+                                <connections>
+                                    <segue destination="Vd0-56-vIA" kind="embed" id="rn5-Yl-j0Q"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u5X-U9-Vg8" firstAttribute="trailing" secondItem="OMJ-b1-x2M" secondAttribute="trailing" id="2xF-VJ-vPy"/>
+                            <constraint firstItem="OMJ-b1-x2M" firstAttribute="trailing" secondItem="O7s-Gd-xKm" secondAttribute="trailing" id="MTT-v3-9nd"/>
+                            <constraint firstItem="u5X-U9-Vg8" firstAttribute="top" secondItem="OMJ-b1-x2M" secondAttribute="top" id="YCr-z7-MTL"/>
+                            <constraint firstItem="O7s-Gd-xKm" firstAttribute="leading" secondItem="OMJ-b1-x2M" secondAttribute="leading" id="aKs-Ym-DaV"/>
+                            <constraint firstItem="OMJ-b1-x2M" firstAttribute="bottom" secondItem="O7s-Gd-xKm" secondAttribute="bottom" id="baa-Zf-g4B"/>
+                            <constraint firstItem="O7s-Gd-xKm" firstAttribute="top" secondItem="u5X-U9-Vg8" secondAttribute="bottom" id="cPU-Og-t5q"/>
+                            <constraint firstItem="u5X-U9-Vg8" firstAttribute="leading" secondItem="OMJ-b1-x2M" secondAttribute="leading" id="daC-jd-JaB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OMJ-b1-x2M"/>
+                    </view>
+                    <connections>
+                        <outlet property="menuView" destination="u5X-U9-Vg8" id="9xh-St-foS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGP-yC-QDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="295" y="-23"/>
+            <point key="canvasLocation" x="372" y="-68.815592203898049"/>
+        </scene>
+        <!--Read Comic Page View Controller-->
+        <scene sceneID="Bon-47-nDS">
+            <objects>
+                <viewController id="Vd0-56-vIA" customClass="ReadComicPageViewController" customModule="ComicViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yeV-VB-Ut4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8G3-Vv-eqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102" y="-69"/>
         </scene>
     </scenes>
 </document>

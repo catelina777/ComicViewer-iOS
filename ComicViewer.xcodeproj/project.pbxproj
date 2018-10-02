@@ -14,17 +14,19 @@
 		0605D3A72156425900868C49 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F44B210ABDC4008ED237 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0605D3A82156425900868C49 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F449210ABDB9008ED237 /* Realm.framework */; };
 		0605D3A92156425900868C49 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F449210ABDB9008ED237 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06164B2021632E9900C3B027 /* ReadComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164B1F21632E9900C3B027 /* ReadComicViewController.swift */; };
+		06164B2221632EAC00C3B027 /* ReadComicViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164B2121632EAC00C3B027 /* ReadComicViewPresenter.swift */; };
+		06164B2421632EB800C3B027 /* ReadComic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06164B2321632EB800C3B027 /* ReadComic.storyboard */; };
 		063E5235215E0D290063096F /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063E5234215E0D290063096F /* Turn.swift */; };
-		064F309C214C18A6001564F1 /* ReadComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309B214C18A6001564F1 /* ReadComicViewController.swift */; };
-		064F309E214C18B1001564F1 /* ReadComicViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309D214C18B1001564F1 /* ReadComicViewPresenter.swift */; };
-		064F30A0214C18DD001564F1 /* ReadComicViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309F214C18DD001564F1 /* ReadComicViewDatasource.swift */; };
+		064F309C214C18A6001564F1 /* ReadComicPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309B214C18A6001564F1 /* ReadComicPageViewController.swift */; };
+		064F309E214C18B1001564F1 /* ReadComicPageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309D214C18B1001564F1 /* ReadComicPageViewPresenter.swift */; };
+		064F30A0214C18DD001564F1 /* ReadComicPageViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309F214C18DD001564F1 /* ReadComicPageViewDatasource.swift */; };
 		064F30A3214C194D001564F1 /* ComicPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F30A2214C194D001564F1 /* ComicPageViewController.swift */; };
 		064F30A7214C1D05001564F1 /* SelectComicViewDatasource+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F30A6214C1D05001564F1 /* SelectComicViewDatasource+UICollectionViewDelegate.swift */; };
 		064F30A9214C1D24001564F1 /* SelectComicViewDatasource+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F30A8214C1D24001564F1 /* SelectComicViewDatasource+UICollectionViewDelegateFlowLayout.swift */; };
 		064F30AB214C1D49001564F1 /* SelectComicViewDatasource+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F30AA214C1D49001564F1 /* SelectComicViewDatasource+UICollectionViewDataSource.swift */; };
-		064F30AD214C20EE001564F1 /* ReadComic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064F30AC214C20EE001564F1 /* ReadComic.storyboard */; };
-		064F30AF214C2351001564F1 /* SelectComicViewDatasource+UIPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F30AE214C2351001564F1 /* SelectComicViewDatasource+UIPageViewControllerDataSource.swift */; };
-		064F30B1214C23A8001564F1 /* ReadComicViewDatasource+UIPageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F30B0214C23A8001564F1 /* ReadComicViewDatasource+UIPageViewControllerDelegate.swift */; };
+		064F30AF214C2351001564F1 /* SelectComicPageViewDatasource+UIPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F30AE214C2351001564F1 /* SelectComicPageViewDatasource+UIPageViewControllerDataSource.swift */; };
+		064F30B1214C23A8001564F1 /* ReadComicPageViewDatasource+UIPageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F30B0214C23A8001564F1 /* ReadComicPageViewDatasource+UIPageViewControllerDelegate.swift */; };
 		064F30B3214C2557001564F1 /* ComicPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064F30B2214C2557001564F1 /* ComicPage.storyboard */; };
 		064F30B6214C2C4D001564F1 /* NSObjectProtocol.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F30B5214C2C4D001564F1 /* NSObjectProtocol.extension.swift */; };
 		066C09D32161228600B53006 /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C09D22161228600B53006 /* Motion.swift */; };
@@ -72,17 +74,19 @@
 		0603F424210ABA7E008ED237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0603F449210ABDB9008ED237 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		0603F44B210ABDC4008ED237 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		06164B1F21632E9900C3B027 /* ReadComicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicViewController.swift; sourceTree = "<group>"; };
+		06164B2121632EAC00C3B027 /* ReadComicViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicViewPresenter.swift; sourceTree = "<group>"; };
+		06164B2321632EB800C3B027 /* ReadComic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReadComic.storyboard; sourceTree = "<group>"; };
 		063E5234215E0D290063096F /* Turn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
-		064F309B214C18A6001564F1 /* ReadComicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicViewController.swift; sourceTree = "<group>"; };
-		064F309D214C18B1001564F1 /* ReadComicViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicViewPresenter.swift; sourceTree = "<group>"; };
-		064F309F214C18DD001564F1 /* ReadComicViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicViewDatasource.swift; sourceTree = "<group>"; };
+		064F309B214C18A6001564F1 /* ReadComicPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicPageViewController.swift; sourceTree = "<group>"; };
+		064F309D214C18B1001564F1 /* ReadComicPageViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicPageViewPresenter.swift; sourceTree = "<group>"; };
+		064F309F214C18DD001564F1 /* ReadComicPageViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicPageViewDatasource.swift; sourceTree = "<group>"; };
 		064F30A2214C194D001564F1 /* ComicPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicPageViewController.swift; sourceTree = "<group>"; };
 		064F30A6214C1D05001564F1 /* SelectComicViewDatasource+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectComicViewDatasource+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		064F30A8214C1D24001564F1 /* SelectComicViewDatasource+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectComicViewDatasource+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		064F30AA214C1D49001564F1 /* SelectComicViewDatasource+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectComicViewDatasource+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
-		064F30AC214C20EE001564F1 /* ReadComic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReadComic.storyboard; sourceTree = "<group>"; };
-		064F30AE214C2351001564F1 /* SelectComicViewDatasource+UIPageViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectComicViewDatasource+UIPageViewControllerDataSource.swift"; sourceTree = "<group>"; };
-		064F30B0214C23A8001564F1 /* ReadComicViewDatasource+UIPageViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReadComicViewDatasource+UIPageViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		064F30AE214C2351001564F1 /* SelectComicPageViewDatasource+UIPageViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectComicPageViewDatasource+UIPageViewControllerDataSource.swift"; sourceTree = "<group>"; };
+		064F30B0214C23A8001564F1 /* ReadComicPageViewDatasource+UIPageViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReadComicPageViewDatasource+UIPageViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		064F30B2214C2557001564F1 /* ComicPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicPage.storyboard; sourceTree = "<group>"; };
 		064F30B5214C2C4D001564F1 /* NSObjectProtocol.extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocol.extension.swift; sourceTree = "<group>"; };
 		066C09D22161228600B53006 /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
@@ -187,7 +191,8 @@
 			children = (
 				06F2A8A7214FBDF9004D2C91 /* SettingPage */,
 				06C5486D210AD2D50081E54A /* SelectComic */,
-				064F309A214C1817001564F1 /* ReadComic */,
+				06164B1E21632E8000C3B027 /* ReadComic */,
+				064F309A214C1817001564F1 /* ReadComicPage */,
 				064F30A1214C1925001564F1 /* ComicPage */,
 			);
 			path = UI;
@@ -204,6 +209,16 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		06164B1E21632E8000C3B027 /* ReadComic */ = {
+			isa = PBXGroup;
+			children = (
+				06164B1F21632E9900C3B027 /* ReadComicViewController.swift */,
+				06164B2121632EAC00C3B027 /* ReadComicViewPresenter.swift */,
+				06164B2321632EB800C3B027 /* ReadComic.storyboard */,
+			);
+			path = ReadComic;
+			sourceTree = "<group>";
+		};
 		0620B9762151404200747EA5 /* Comics */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,17 +226,16 @@
 			path = Comics;
 			sourceTree = "<group>";
 		};
-		064F309A214C1817001564F1 /* ReadComic */ = {
+		064F309A214C1817001564F1 /* ReadComicPage */ = {
 			isa = PBXGroup;
 			children = (
-				064F309B214C18A6001564F1 /* ReadComicViewController.swift */,
-				064F309D214C18B1001564F1 /* ReadComicViewPresenter.swift */,
-				064F309F214C18DD001564F1 /* ReadComicViewDatasource.swift */,
-				064F30AE214C2351001564F1 /* SelectComicViewDatasource+UIPageViewControllerDataSource.swift */,
-				064F30B0214C23A8001564F1 /* ReadComicViewDatasource+UIPageViewControllerDelegate.swift */,
-				064F30AC214C20EE001564F1 /* ReadComic.storyboard */,
+				064F309B214C18A6001564F1 /* ReadComicPageViewController.swift */,
+				064F309D214C18B1001564F1 /* ReadComicPageViewPresenter.swift */,
+				064F309F214C18DD001564F1 /* ReadComicPageViewDatasource.swift */,
+				064F30AE214C2351001564F1 /* SelectComicPageViewDatasource+UIPageViewControllerDataSource.swift */,
+				064F30B0214C23A8001564F1 /* ReadComicPageViewDatasource+UIPageViewControllerDelegate.swift */,
 			);
-			path = ReadComic;
+			path = ReadComicPage;
 			sourceTree = "<group>";
 		};
 		064F30A1214C1925001564F1 /* ComicPage */ = {
@@ -366,7 +380,7 @@
 			files = (
 				06C5486F210AD2E40081E54A /* SelectComic.storyboard in Resources */,
 				0603F423210ABA7E008ED237 /* LaunchScreen.storyboard in Resources */,
-				064F30AD214C20EE001564F1 /* ReadComic.storyboard in Resources */,
+				06164B2421632EB800C3B027 /* ReadComic.storyboard in Resources */,
 				06F2A8BE214FF0F9004D2C91 /* Icons.xcassets in Resources */,
 				064F30B3214C2557001564F1 /* ComicPage.storyboard in Resources */,
 				0603F420210ABA7E008ED237 /* Assets.xcassets in Resources */,
@@ -469,21 +483,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				064F30B6214C2C4D001564F1 /* NSObjectProtocol.extension.swift in Sources */,
+				06164B2221632EAC00C3B027 /* ReadComicViewPresenter.swift in Sources */,
 				06F2A8AB214FBE4E004D2C91 /* SettingPageViewPresenter.swift in Sources */,
 				06C54875210AD6E30081E54A /* SelectComicViewDatasource.swift in Sources */,
-				064F309E214C18B1001564F1 /* ReadComicViewPresenter.swift in Sources */,
-				064F30B1214C23A8001564F1 /* ReadComicViewDatasource+UIPageViewControllerDelegate.swift in Sources */,
+				064F309E214C18B1001564F1 /* ReadComicPageViewPresenter.swift in Sources */,
+				064F30B1214C23A8001564F1 /* ReadComicPageViewDatasource+UIPageViewControllerDelegate.swift in Sources */,
 				063E5235215E0D290063096F /* Turn.swift in Sources */,
 				06C54871210AD2F30081E54A /* SelectComicViewController.swift in Sources */,
 				06F2A8AD214FC159004D2C91 /* Realm.extension.swift in Sources */,
 				06F2A8B6214FC8B7004D2C91 /* Comic.swift in Sources */,
 				064F30A3214C194D001564F1 /* ComicPageViewController.swift in Sources */,
 				06F2A8B2214FC892004D2C91 /* User.swift in Sources */,
-				064F30A0214C18DD001564F1 /* ReadComicViewDatasource.swift in Sources */,
-				064F30AF214C2351001564F1 /* SelectComicViewDatasource+UIPageViewControllerDataSource.swift in Sources */,
+				064F30A0214C18DD001564F1 /* ReadComicPageViewDatasource.swift in Sources */,
+				064F30AF214C2351001564F1 /* SelectComicPageViewDatasource+UIPageViewControllerDataSource.swift in Sources */,
 				0603F419210ABA7D008ED237 /* AppDelegate.swift in Sources */,
 				06F2A8BA214FCB03004D2C91 /* Like.swift in Sources */,
-				064F309C214C18A6001564F1 /* ReadComicViewController.swift in Sources */,
+				06164B2021632E9900C3B027 /* ReadComicViewController.swift in Sources */,
+				064F309C214C18A6001564F1 /* ReadComicPageViewController.swift in Sources */,
 				06C5486C210AD0DB0081E54A /* R.generated.swift in Sources */,
 				066C09D32161228600B53006 /* Motion.swift in Sources */,
 				06C54873210AD6D40081E54A /* SelectComicViewPresenter.swift in Sources */,

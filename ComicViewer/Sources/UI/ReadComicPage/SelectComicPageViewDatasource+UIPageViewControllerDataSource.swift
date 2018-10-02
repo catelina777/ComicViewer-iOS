@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ReadComicViewDatasource: UIPageViewControllerDataSource {
+extension ReadComicPageViewDatasource: UIPageViewControllerDataSource {
 
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {

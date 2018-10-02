@@ -12,8 +12,7 @@ import RealmSwift
 protocol ComicPagePresenter: class {
     init(view: ComicPageView, user: User, comic: Comic, activity: Activity, index: Int)
     var index: Int { get }
-    func showReadComic()
-    func disappear(menuView: UIView)
+    func viewWillDisappear()
     func animate(with imageView: UIImageView)
     func addFavorite(locX: Double, locY: Double)
     func exportCSV()
@@ -38,14 +37,8 @@ final class ComicPageViewPresenter: ComicPagePresenter {
 
 extension ComicPageViewPresenter {
 
-    func showReadComic() {
+    func viewWillDisappear() {
         putBookmark(at: index)
-        exportCSV()
-        view?.showReadComic()
-    }
-
-    func disappear(menuView: UIView) {
-        menuView.isHidden = !menuView.isHidden
     }
 
     func animate(with imageView: UIImageView) {

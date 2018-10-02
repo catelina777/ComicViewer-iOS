@@ -78,9 +78,9 @@ extension SelectComicViewPresenter {
         let comic = self.comic(name: name,
                                numOfPages: images.count)
         view?.showReadComic(user: user,
-                           comic: comic,
-                           images: images,
-                           index: comic.bookmarkIndex)
+                            comic: comic,
+                            images: images,
+                            index: comic.bookmarkIndex)
     }
 
     private func comic(name: String, numOfPages: Int) -> Comic {

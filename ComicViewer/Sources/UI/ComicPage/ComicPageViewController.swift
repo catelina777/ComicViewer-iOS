@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ComicPageView: class {
-    func showReadComic()
+    func didDoubleTap(sender: UITapGestureRecognizer)
 }
 
 final class ComicPageViewController: UIViewController, ComicPageView {
@@ -22,10 +22,6 @@ final class ComicPageViewController: UIViewController, ComicPageView {
         }
     }
 
-    @IBOutlet weak var menuView: UIView!
-    @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet weak var allPagesButton: UIButton!
-
     var presenter: ComicPagePresenter!
 
     weak var comicImage: UIImage?
@@ -36,21 +32,13 @@ final class ComicPageViewController: UIViewController, ComicPageView {
         self.comicImageView.image = comicImage
     }
 
-    @IBAction func didPressCloseButton(_ sender: Any) {
-        presenter.showReadComic()
-    }
-
-    @IBAction func didPressAllPagesButton(_ sender: Any) {
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter.viewWillDisappear()
     }
 }
 
 extension ComicPageViewController {
-
-    func showReadComic() {
-        self.dismiss(animated: true,
-                     completion: nil)
-    }
 
     func set(image: UIImage, user: User, comic: Comic, activity: Activity, index: Int) {
         self.comicImage = image
@@ -65,10 +53,6 @@ extension ComicPageViewController {
         let doubleTapGR = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(sender:)))
         doubleTapGR.numberOfTapsRequired = 2
         self.view.addGestureRecognizer(doubleTapGR)
-
-        let singleTapGR = UITapGestureRecognizer(target: self, action: #selector(didSingleTap))
-        singleTapGR.require(toFail: doubleTapGR)
-        self.view.addGestureRecognizer(singleTapGR)
     }
 
     @objc func didDoubleTap(sender: UITapGestureRecognizer) {
@@ -76,9 +60,5 @@ extension ComicPageViewController {
         presenter.addFavorite(locX: Double(tapPoint.x),
                               locY: Double(tapPoint.y))
         presenter.animate(with: likeImageView)
-    }
-
-    @objc func didSingleTap() {
-        presenter.disappear(menuView: menuView)
     }
 }
