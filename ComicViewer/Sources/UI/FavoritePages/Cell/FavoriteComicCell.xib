@@ -43,6 +43,7 @@
             <viewLayoutGuide key="safeArea" id="jb1-26-kiM"/>
             <size key="customSize" width="165" height="154"/>
             <connections>
+                <outlet property="favoriteImageView" destination="Sur-LV-YF0" id="JmW-Fq-bhA"/>
                 <outlet property="imageView" destination="kx9-sQ-mnI" id="hqc-Li-Oal"/>
             </connections>
             <point key="canvasLocation" x="140.80000000000001" y="171.81409295352324"/>

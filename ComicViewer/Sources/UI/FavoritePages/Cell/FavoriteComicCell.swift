@@ -11,6 +11,7 @@ import UIKit
 final class FavoriteComicCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var favoriteImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +20,8 @@ final class FavoriteComicCell: UICollectionViewCell {
 
 extension FavoriteComicCell {
 
-    func set(with image: UIImage) {
+    func set(image: UIImage, isFavorite: Bool) {
         imageView.image = image
+        favoriteImageView.isHidden = !isFavorite
     }
 }

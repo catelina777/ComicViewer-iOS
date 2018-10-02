@@ -63,7 +63,8 @@ extension ReadComicViewController {
 
     func showAllPages() {
         let vc = R.storyboard.favoritePages.instantiateInitialViewController()!
-        vc.set(images: presenter.images)
+        vc.set(images: presenter.images,
+               comic: presenter.comic)
         let navigationVC = UINavigationController(rootViewController: vc)
         present(navigationVC,
                 animated: true,
