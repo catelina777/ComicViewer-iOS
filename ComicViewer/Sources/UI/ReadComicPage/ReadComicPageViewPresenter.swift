@@ -1,5 +1,5 @@
 //
-//  ReadComicViewPresenter.swift
+//  ReadComicPageViewPresenter.swift
 //  ComicViewer
 //
 //  Created by Ryuhei Kaminishi on 2018/09/15.
@@ -23,9 +23,9 @@ protocol ReadComicPresenter: class {
     func didReceiveMemoryWarning()
 }
 
-final class ReadComicViewPresenter: ReadComicPresenter {
+final class ReadComicPageViewPresenter: ReadComicPresenter {
 
-    private weak var view: ReadComicView?
+    private weak var view: ReadComicPageView?
     private var user: User
     private var comic: Comic
     private var activity: Activity
@@ -45,7 +45,7 @@ final class ReadComicViewPresenter: ReadComicPresenter {
     }
 }
 
-extension ReadComicViewPresenter {
+extension ReadComicPageViewPresenter {
 
     func getPage(by index: Int) -> ComicPageViewController? {
         let vc = R.storyboard.comicPage.instantiateInitialViewController()!

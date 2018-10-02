@@ -42,7 +42,7 @@ extension SelectComicViewController {
     }
 
     func showReadComic(user: User, comic: Comic, images: [UIImage], index: Int) {
-        let vc = R.storyboard.readComic.instantiateInitialViewController()!
+        let vc = R.storyboard.readComicPage.instantiateInitialViewController()!
         vc.set(user: user,
                comic: comic,
                images: images,

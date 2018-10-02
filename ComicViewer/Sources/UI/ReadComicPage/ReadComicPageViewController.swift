@@ -1,5 +1,5 @@
 //
-//  ReadComicViewController.swift
+//  ReadComicPageViewController.swift
 //  ComicViewer
 //
 //  Created by Ryuhei Kaminishi on 2018/09/15.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol ReadComicView: class {
+protocol ReadComicPageView: class {
     func set(user: User, comic: Comic, images: [UIImage], currentIndex: Int)
     func showSelectComic()
 }
 
-final class ReadComicViewController: UIPageViewController, ReadComicView {
+final class ReadComicPageViewController: UIPageViewController, ReadComicPageView {
 
     var presenter: ReadComicPresenter!
-    private lazy var datasource = ReadComicViewDatasource(presenter: self.presenter)
+    private lazy var datasource = ReadComicPageViewDatasource(presenter: self.presenter)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +39,13 @@ final class ReadComicViewController: UIPageViewController, ReadComicView {
     }
 }
 
-extension ReadComicViewController {
+extension ReadComicPageViewController {
 
     func set(user: User, comic: Comic, images: [UIImage], currentIndex: Int) {
-        presenter = ReadComicViewPresenter(user: user,
-                                           comic: comic,
-                                           images: images,
-                                           currentIndex: currentIndex)
+        presenter = ReadComicPageViewPresenter(user: user,
+                                               comic: comic,
+                                               images: images,
+                                               currentIndex: currentIndex)
     }
 
     func showSelectComic() {
