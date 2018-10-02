@@ -113,6 +113,5 @@ extension ReadComicPageViewPresenter {
 
     func didReceiveMemoryWarning() {
         viewWillDisappear()
-        view?.showSelectComic()
     }
 }

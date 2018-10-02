@@ -10,7 +10,6 @@ import UIKit
 
 protocol ReadComicPageView: class {
     func set(user: User, comic: Comic, images: [UIImage], currentIndex: Int)
-    func showSelectComic()
 }
 
 final class ReadComicPageViewController: UIPageViewController, ReadComicPageView {
@@ -46,10 +45,5 @@ extension ReadComicPageViewController {
                                                comic: comic,
                                                images: images,
                                                currentIndex: currentIndex)
-    }
-
-    func showSelectComic() {
-        self.dismiss(animated: true,
-                     completion: nil)
     }
 }
