@@ -15,7 +15,7 @@ protocol ReadComicPageView: class {
 
 final class ReadComicPageViewController: UIPageViewController, ReadComicPageView {
 
-    var presenter: ReadComicPresenter!
+    var presenter: ReadComicPagePresenter!
     private lazy var datasource = ReadComicPageViewDatasource(presenter: self.presenter)
 
     override func viewDidLoad() {

@@ -10,9 +10,9 @@ import UIKit
 
 final class ReadComicPageViewDatasource: NSObject {
 
-    let presenter: ReadComicPresenter
+    let presenter: ReadComicPagePresenter
 
-    init(presenter: ReadComicPresenter) {
+    init(presenter: ReadComicPagePresenter) {
         self.presenter = presenter
     }
 }

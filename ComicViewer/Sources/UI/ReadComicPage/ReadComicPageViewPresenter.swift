@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import CoreMotion
 
-protocol ReadComicPresenter: class {
+protocol ReadComicPagePresenter: class {
     init(user: User, comic: Comic, images: [UIImage], currentIndex: Int)
     func getPage(by index: Int) -> ComicPageViewController?
     func getCurrentPage() -> ComicPageViewController?
@@ -23,7 +23,7 @@ protocol ReadComicPresenter: class {
     func didReceiveMemoryWarning()
 }
 
-final class ReadComicPageViewPresenter: ReadComicPresenter {
+final class ReadComicPageViewPresenter: ReadComicPagePresenter {
 
     private weak var view: ReadComicPageView?
     private var user: User
