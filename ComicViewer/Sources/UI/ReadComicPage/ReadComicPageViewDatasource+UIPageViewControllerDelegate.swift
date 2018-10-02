@@ -22,5 +22,11 @@ extension ReadComicPageViewDatasource: UIPageViewControllerDelegate {
             presenter.recordDisplayedPage(at: index)
             print("transitioned to \(index)")
         }
+        presenter.set(isTransitioning: false)
+    }
+
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            willTransitionTo pendingViewControllers: [UIViewController]) {
+        presenter.set(isTransitioning: true)
     }
 }

@@ -21,6 +21,8 @@ protocol ReadComicPagePresenter: class {
     func viewDidAppear()
     func viewWillDisappear()
     func didReceiveMemoryWarning()
+    var isTransitioning: Bool { get }
+    func set(isTransitioning: Bool)
 }
 
 final class ReadComicPageViewPresenter: ReadComicPagePresenter {
@@ -34,6 +36,9 @@ final class ReadComicPageViewPresenter: ReadComicPagePresenter {
     private let lastIndex: Int
     private let motionManager = CMMotionManager()
     private var accelerations: [CMAcceleration] = []
+
+    var isTransitioning = false
+
 
     init(user: User, comic: Comic, images: [UIImage], currentIndex: Int) {
         self.user = user
@@ -113,5 +118,9 @@ extension ReadComicPageViewPresenter {
 
     func didReceiveMemoryWarning() {
         viewWillDisappear()
+    }
+
+    func set(isTransitioning: Bool) {
+        self.isTransitioning = isTransitioning
     }
 }
