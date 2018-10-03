@@ -38,6 +38,15 @@
 		06C54875210AD6E30081E54A /* SelectComicViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C54874210AD6E30081E54A /* SelectComicViewDatasource.swift */; };
 		06C54878210ADBAB0081E54A /* SelectComicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C54877210ADBAB0081E54A /* SelectComicCell.xib */; };
 		06C5487A210ADC2D0081E54A /* SelectComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C54879210ADC2D0081E54A /* SelectComicCell.swift */; };
+		06EE53B82163522C0036204F /* FavoritePagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE53B72163522C0036204F /* FavoritePagesViewController.swift */; };
+		06EE53BA216352560036204F /* FavoritePagesViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE53B9216352560036204F /* FavoritePagesViewPresenter.swift */; };
+		06EE53BC216352690036204F /* FavoritePagesViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE53BB216352690036204F /* FavoritePagesViewDatasource.swift */; };
+		06EE53BE216355600036204F /* FavoritePagesViewDatasource+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE53BD216355600036204F /* FavoritePagesViewDatasource+UICollectionViewDataSource.swift */; };
+		06EE53C0216355760036204F /* FavoritePagesViewDatasource+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE53BF216355760036204F /* FavoritePagesViewDatasource+UICollectionViewDelegate.swift */; };
+		06EE53C2216355860036204F /* FavoritePagesViewDatasource+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE53C1216355860036204F /* FavoritePagesViewDatasource+UICollectionViewDelegateFlowLayout.swift */; };
+		06EE53C5216357DA0036204F /* FavoriteComicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EE53C4216357DA0036204F /* FavoriteComicCell.xib */; };
+		06EE53C7216357E70036204F /* FavoriteComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE53C6216357E70036204F /* FavoriteComicCell.swift */; };
+		06EE53C921635A9D0036204F /* FavoritePages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EE53C821635A9D0036204F /* FavoritePages.storyboard */; };
 		06F2A8A9214FBE31004D2C91 /* SettingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F2A8A8214FBE31004D2C91 /* SettingPageViewController.swift */; };
 		06F2A8AB214FBE4E004D2C91 /* SettingPageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F2A8AA214FBE4E004D2C91 /* SettingPageViewPresenter.swift */; };
 		06F2A8AD214FC159004D2C91 /* Realm.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F2A8AC214FC159004D2C91 /* Realm.extension.swift */; };
@@ -98,6 +107,15 @@
 		06C54874210AD6E30081E54A /* SelectComicViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectComicViewDatasource.swift; sourceTree = "<group>"; };
 		06C54877210ADBAB0081E54A /* SelectComicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectComicCell.xib; sourceTree = "<group>"; };
 		06C54879210ADC2D0081E54A /* SelectComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectComicCell.swift; sourceTree = "<group>"; };
+		06EE53B72163522C0036204F /* FavoritePagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePagesViewController.swift; sourceTree = "<group>"; };
+		06EE53B9216352560036204F /* FavoritePagesViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePagesViewPresenter.swift; sourceTree = "<group>"; };
+		06EE53BB216352690036204F /* FavoritePagesViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePagesViewDatasource.swift; sourceTree = "<group>"; };
+		06EE53BD216355600036204F /* FavoritePagesViewDatasource+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritePagesViewDatasource+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		06EE53BF216355760036204F /* FavoritePagesViewDatasource+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritePagesViewDatasource+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		06EE53C1216355860036204F /* FavoritePagesViewDatasource+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritePagesViewDatasource+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		06EE53C4216357DA0036204F /* FavoriteComicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteComicCell.xib; sourceTree = "<group>"; };
+		06EE53C6216357E70036204F /* FavoriteComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteComicCell.swift; sourceTree = "<group>"; };
+		06EE53C821635A9D0036204F /* FavoritePages.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritePages.storyboard; sourceTree = "<group>"; };
 		06F2A8A8214FBE31004D2C91 /* SettingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPageViewController.swift; sourceTree = "<group>"; };
 		06F2A8AA214FBE4E004D2C91 /* SettingPageViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPageViewPresenter.swift; sourceTree = "<group>"; };
 		06F2A8AC214FC159004D2C91 /* Realm.extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.extension.swift; sourceTree = "<group>"; };
@@ -192,6 +210,7 @@
 				06F2A8A7214FBDF9004D2C91 /* SettingPage */,
 				06C5486D210AD2D50081E54A /* SelectComic */,
 				06164B1E21632E8000C3B027 /* ReadComic */,
+				06EE53B6216351FC0036204F /* FavoritePages */,
 				064F309A214C1817001564F1 /* ReadComicPage */,
 				064F30A1214C1925001564F1 /* ComicPage */,
 			);
@@ -277,6 +296,30 @@
 			children = (
 				06C54877210ADBAB0081E54A /* SelectComicCell.xib */,
 				06C54879210ADC2D0081E54A /* SelectComicCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		06EE53B6216351FC0036204F /* FavoritePages */ = {
+			isa = PBXGroup;
+			children = (
+				06EE53C32163576A0036204F /* Cell */,
+				06EE53B72163522C0036204F /* FavoritePagesViewController.swift */,
+				06EE53B9216352560036204F /* FavoritePagesViewPresenter.swift */,
+				06EE53BB216352690036204F /* FavoritePagesViewDatasource.swift */,
+				06EE53BD216355600036204F /* FavoritePagesViewDatasource+UICollectionViewDataSource.swift */,
+				06EE53BF216355760036204F /* FavoritePagesViewDatasource+UICollectionViewDelegate.swift */,
+				06EE53C1216355860036204F /* FavoritePagesViewDatasource+UICollectionViewDelegateFlowLayout.swift */,
+				06EE53C821635A9D0036204F /* FavoritePages.storyboard */,
+			);
+			path = FavoritePages;
+			sourceTree = "<group>";
+		};
+		06EE53C32163576A0036204F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				06EE53C4216357DA0036204F /* FavoriteComicCell.xib */,
+				06EE53C6216357E70036204F /* FavoriteComicCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -384,8 +427,10 @@
 				06F2A8BE214FF0F9004D2C91 /* Icons.xcassets in Resources */,
 				064F30B3214C2557001564F1 /* ComicPage.storyboard in Resources */,
 				0603F420210ABA7E008ED237 /* Assets.xcassets in Resources */,
+				06EE53C921635A9D0036204F /* FavoritePages.storyboard in Resources */,
 				06C54878210ADBAB0081E54A /* SelectComicCell.xib in Resources */,
 				0679507C214D3BF700BC64DA /* Placeholders.xcassets in Resources */,
+				06EE53C5216357DA0036204F /* FavoriteComicCell.xib in Resources */,
 				06F2A8AF214FC1E2004D2C91 /* SettingPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06EE53B82163522C0036204F /* FavoritePagesViewController.swift in Sources */,
 				064F30B6214C2C4D001564F1 /* NSObjectProtocol.extension.swift in Sources */,
 				06164B2221632EAC00C3B027 /* ReadComicViewPresenter.swift in Sources */,
 				06F2A8AB214FBE4E004D2C91 /* SettingPageViewPresenter.swift in Sources */,
@@ -489,16 +535,21 @@
 				064F309E214C18B1001564F1 /* ReadComicPageViewPresenter.swift in Sources */,
 				064F30B1214C23A8001564F1 /* ReadComicPageViewDatasource+UIPageViewControllerDelegate.swift in Sources */,
 				063E5235215E0D290063096F /* Turn.swift in Sources */,
+				06EE53C7216357E70036204F /* FavoriteComicCell.swift in Sources */,
+				06EE53BE216355600036204F /* FavoritePagesViewDatasource+UICollectionViewDataSource.swift in Sources */,
 				06C54871210AD2F30081E54A /* SelectComicViewController.swift in Sources */,
+				06EE53C0216355760036204F /* FavoritePagesViewDatasource+UICollectionViewDelegate.swift in Sources */,
 				06F2A8AD214FC159004D2C91 /* Realm.extension.swift in Sources */,
 				06F2A8B6214FC8B7004D2C91 /* Comic.swift in Sources */,
 				064F30A3214C194D001564F1 /* ComicPageViewController.swift in Sources */,
 				06F2A8B2214FC892004D2C91 /* User.swift in Sources */,
 				064F30A0214C18DD001564F1 /* ReadComicPageViewDatasource.swift in Sources */,
+				06EE53C2216355860036204F /* FavoritePagesViewDatasource+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				064F30AF214C2351001564F1 /* SelectComicPageViewDatasource+UIPageViewControllerDataSource.swift in Sources */,
 				0603F419210ABA7D008ED237 /* AppDelegate.swift in Sources */,
 				06F2A8BA214FCB03004D2C91 /* Like.swift in Sources */,
 				06164B2021632E9900C3B027 /* ReadComicViewController.swift in Sources */,
+				06EE53BC216352690036204F /* FavoritePagesViewDatasource.swift in Sources */,
 				064F309C214C18A6001564F1 /* ReadComicPageViewController.swift in Sources */,
 				06C5486C210AD0DB0081E54A /* R.generated.swift in Sources */,
 				066C09D32161228600B53006 /* Motion.swift in Sources */,
@@ -509,6 +560,7 @@
 				06C5487A210ADC2D0081E54A /* SelectComicCell.swift in Sources */,
 				064F30A9214C1D24001564F1 /* SelectComicViewDatasource+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				064F30A7214C1D05001564F1 /* SelectComicViewDatasource+UICollectionViewDelegate.swift in Sources */,
+				06EE53BA216352560036204F /* FavoritePagesViewPresenter.swift in Sources */,
 				06F2A8B8214FC8CE004D2C91 /* Activity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

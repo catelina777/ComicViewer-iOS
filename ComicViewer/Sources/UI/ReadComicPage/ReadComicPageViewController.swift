@@ -10,6 +10,7 @@ import UIKit
 
 protocol ReadComicPageView: class {
     func set(user: User, comic: Comic, images: [UIImage], currentIndex: Int)
+    func movePage(to index: Int)
 }
 
 final class ReadComicPageViewController: UIPageViewController, ReadComicPageView {
@@ -29,7 +30,7 @@ final class ReadComicPageViewController: UIPageViewController, ReadComicPageView
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-         presenter.viewDidAppear()
+        presenter.viewDidAppear()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,9 +42,18 @@ final class ReadComicPageViewController: UIPageViewController, ReadComicPageView
 extension ReadComicPageViewController {
 
     func set(user: User, comic: Comic, images: [UIImage], currentIndex: Int) {
-        presenter = ReadComicPageViewPresenter(user: user,
+        presenter = ReadComicPageViewPresenter(view: self,
+                                               user: user,
                                                comic: comic,
                                                images: images,
                                                currentIndex: currentIndex)
+    }
+
+    func movePage(to index: Int) {
+        guard let destinationVC = presenter.getPage(by: index) else { return }
+        self.setViewControllers([destinationVC],
+                                direction: .forward,
+                                animated: false,
+                                completion: nil)
     }
 }

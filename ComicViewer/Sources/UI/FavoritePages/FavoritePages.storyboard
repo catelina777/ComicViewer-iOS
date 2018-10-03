@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FUe-SK-YGD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorite Pages View Controller-->
+        <scene sceneID="aoL-fK-CL9">
+            <objects>
+                <viewController id="FUe-SK-YGD" customClass="FavoritePagesViewController" customModule="ComicViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iQa-bx-tHC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jxD-Mi-wsH">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L00-LU-VAi">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jxD-Mi-wsH" firstAttribute="top" secondItem="mNp-Uj-RBU" secondAttribute="top" id="CdV-ty-UF4"/>
+                            <constraint firstItem="jxD-Mi-wsH" firstAttribute="leading" secondItem="mNp-Uj-RBU" secondAttribute="leading" id="F88-JE-HZ4"/>
+                            <constraint firstItem="mNp-Uj-RBU" firstAttribute="trailing" secondItem="jxD-Mi-wsH" secondAttribute="trailing" id="Oj8-sJ-KPz"/>
+                            <constraint firstItem="mNp-Uj-RBU" firstAttribute="bottom" secondItem="jxD-Mi-wsH" secondAttribute="bottom" id="eWB-JG-uml"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mNp-Uj-RBU"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="jxD-Mi-wsH" id="p2R-0T-nBA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xfa-qv-pE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119" y="156"/>
+        </scene>
+    </scenes>
+</document>

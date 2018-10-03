@@ -11,6 +11,7 @@ import UIKit
 protocol ReadComicView: class {
     func set(user: User, comic: Comic, images: [UIImage], index: Int)
     func showSelectComic()
+    func showAllPages()
 }
 
 final class ReadComicViewController: UIViewController, ReadComicView {
@@ -23,6 +24,10 @@ final class ReadComicViewController: UIViewController, ReadComicView {
     override func viewDidLoad() {
         super.viewDidLoad()
         setGestures()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +50,7 @@ final class ReadComicViewController: UIViewController, ReadComicView {
     }
 
     @IBAction func didPressAllPages(_ sender: Any) {
-
+        presenter.showAllPages()
     }
 }
 
@@ -54,6 +59,17 @@ extension ReadComicViewController {
     func showSelectComic() {
         self.dismiss(animated: true,
                      completion: nil)
+    }
+
+    func showAllPages() {
+        let vc = R.storyboard.favoritePages.instantiateInitialViewController()!
+        vc.set(images: presenter.images,
+               comic: presenter.comic)
+        let navigationVC = UINavigationController(rootViewController: vc)
+        present(navigationVC,
+                animated: true,
+                completion: nil)
+        print("show all pages")
     }
 
     func set(user: User, comic: Comic, images: [UIImage], index: Int) {
