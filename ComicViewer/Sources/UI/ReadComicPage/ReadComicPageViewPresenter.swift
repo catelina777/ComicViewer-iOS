@@ -126,6 +126,7 @@ extension ReadComicPageViewPresenter {
     }
 
     func movePage(to index: Int) {
+        currentIndex = index
         view?.movePage(to: index)
     }
 }
