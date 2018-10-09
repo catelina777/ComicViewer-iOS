@@ -14,7 +14,11 @@ protocol ComicPageView: class {
 
 final class ComicPageViewController: UIViewController, ComicPageView {
 
-    @IBOutlet weak var comicImageView: UIImageView!
+    @IBOutlet weak var comicImageView: UIImageView! {
+        didSet {
+            comicImageView.image = comicImage
+        }
+    }
     @IBOutlet weak var likeImageView: UIImageView! {
         didSet {
             likeImageView.image = R.image.favorite()?.withRenderingMode(.alwaysTemplate)
@@ -24,12 +28,11 @@ final class ComicPageViewController: UIViewController, ComicPageView {
 
     var presenter: ComicPagePresenter!
 
-    weak var comicImage: UIImage?
+    var comicImage: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareGestures()
-        self.comicImageView.image = comicImage
     }
 
     override func viewWillDisappear(_ animated: Bool) {

@@ -9,23 +9,22 @@
 import UIKit
 
 protocol FavoritePagesPresenter: class {
-    init(view: FavoritePagesView, images: [UIImage], comic: Comic)
+    init(view: FavoritePagesView, comic: Comic)
     func showReadComic()
     func showReadComic(to index: Int)
     var numOfImages: Int { get }
-    func image(at index: Int) -> UIImage
+    func page(at index: Int) -> UIImage?
     func like(at index: Int) -> Bool
 }
 
 final class FavoritePagesViewPresenter: FavoritePagesPresenter {
 
     private weak var view: FavoritePagesView?
-    private let images: [UIImage]
     private let comic: Comic
 
     private lazy var likes: [Bool] = {
         var likes = [Bool].init(repeating: false,
-                                count: images.count)
+                                count: numOfImages)
         comic.activities.forEach { activity in
             activity.likes.forEach { like in
                 likes[like.index] = true
@@ -34,13 +33,14 @@ final class FavoritePagesViewPresenter: FavoritePagesPresenter {
         return likes
     }()
 
-    var numOfImages: Int {
-        return images.count
-    }
+    lazy var numOfImages: Int = {
+        let paths = Bundle.main.paths(forResourcesOfType: "jpg",
+                                      inDirectory: comic.name)
+        return paths.count
+    }()
 
-    init(view: FavoritePagesView, images: [UIImage], comic: Comic) {
+    init(view: FavoritePagesView, comic: Comic) {
         self.view = view
-        self.images = images
         self.comic = comic
     }
 }
@@ -55,11 +55,17 @@ extension FavoritePagesViewPresenter {
         view?.showReadComic(to: index)
     }
 
-    func image(at index: Int) -> UIImage {
-        return images[index]
-    }
-
     func like(at index: Int) -> Bool {
         return likes[index]
+    }
+
+    func page(at index: Int) -> UIImage? {
+        let fileNameIndex = index + 1
+        guard let path = Bundle.main.path(forResource: "\(fileNameIndex)",
+            ofType: "jpg",
+            inDirectory: comic.name)
+        else { return nil }
+
+        return UIImage(contentsOfFile: path)
     }
 }

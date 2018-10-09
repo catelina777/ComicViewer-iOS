@@ -46,10 +46,9 @@ extension FavoritePagesViewController {
                      completion: nil)
     }
 
-    func set(images: [UIImage], comic: Comic) {
+    func set(comic: Comic) {
 
         presenter = FavoritePagesViewPresenter(view: self,
-                                               images: images,
                                                comic: comic)
         dataSource = FavoritePagesViewDatasource(presenter: presenter)
     }

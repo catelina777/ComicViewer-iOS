@@ -9,7 +9,6 @@
 import UIKit
 
 protocol ReadComicPageView: class {
-    func set(user: User, comic: Comic, images: [UIImage], currentIndex: Int)
     func movePage(to index: Int)
 }
 
@@ -41,11 +40,10 @@ final class ReadComicPageViewController: UIPageViewController, ReadComicPageView
 
 extension ReadComicPageViewController {
 
-    func set(user: User, comic: Comic, images: [UIImage], currentIndex: Int) {
+    func set(user: User, comic: Comic, currentIndex: Int) {
         presenter = ReadComicPageViewPresenter(view: self,
                                                user: user,
                                                comic: comic,
-                                               images: images,
                                                currentIndex: currentIndex)
     }
 

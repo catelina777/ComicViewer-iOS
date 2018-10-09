@@ -11,7 +11,7 @@ import UIKit
 protocol SelectComicView: class {
     func set(user: User)
     func prepareNavigationBar()
-    func showReadComic(user: User, comic: Comic, images: [UIImage], index: Int)
+    func showReadComic(user: User, comic: Comic, index: Int)
 }
 
 final class SelectComicViewController: UIViewController, SelectComicView {
@@ -41,11 +41,10 @@ extension SelectComicViewController {
         self.title = "Comics"
     }
 
-    func showReadComic(user: User, comic: Comic, images: [UIImage], index: Int) {
+    func showReadComic(user: User, comic: Comic, index: Int) {
         let vc = R.storyboard.readComic.instantiateInitialViewController()!
         vc.set(user: user,
                comic: comic,
-               images: images,
                index: index)
         navigationController?.present(vc,
                                       animated: true,

@@ -11,7 +11,7 @@ import RealmSwift
 import CoreMotion
 
 protocol ReadComicPagePresenter: class {
-    init(view: ReadComicPageView, user: User, comic: Comic, images: [UIImage], currentIndex: Int)
+    init(view: ReadComicPageView, user: User, comic: Comic, currentIndex: Int)
     func getPage(by index: Int) -> ComicPageViewController?
     func getCurrentPage() -> ComicPageViewController?
     func getPreviousPage() -> ComicPageViewController?
@@ -24,6 +24,7 @@ protocol ReadComicPagePresenter: class {
     var isTransitioning: Bool { get }
     func set(isTransitioning: Bool)
     func movePage(to index: Int)
+    func page(at index: Int) -> UIImage?
 }
 
 final class ReadComicPageViewPresenter: ReadComicPagePresenter {
@@ -32,22 +33,24 @@ final class ReadComicPageViewPresenter: ReadComicPagePresenter {
     private var user: User
     private var comic: Comic
     private var activity: Activity
-    private let images: [UIImage]
     private var currentIndex: Int
-    private let lastIndex: Int
-    private let motionManager = CMMotionManager()
+    lazy var motionManager = CMMotionManager()
     private var accelerations: [CMAcceleration] = []
 
     var isTransitioning = false
 
-    init(view: ReadComicPageView, user: User, comic: Comic, images: [UIImage], currentIndex: Int) {
+    lazy var numOfImages: Int = {
+        let paths = Bundle.main.paths(forResourcesOfType: "jpg",
+                                      inDirectory: comic.name)
+        return paths.count
+    }()
+
+    init(view: ReadComicPageView, user: User, comic: Comic, currentIndex: Int) {
         self.view = view
         self.user = user
         self.comic = comic
         self.activity = comic.activities.sorted(byKeyPath: "date", ascending: false).first!
-        self.images = images
         self.currentIndex = currentIndex
-        self.lastIndex = images.count - 1
     }
 }
 
@@ -55,7 +58,8 @@ extension ReadComicPageViewPresenter {
 
     func getPage(by index: Int) -> ComicPageViewController? {
         let vc = R.storyboard.comicPage.instantiateInitialViewController()!
-        vc.set(image: self.images[index],
+        guard let image = page(at: index) else { return nil }
+        vc.set(image: image,
                user: self.user,
                comic: self.comic,
                activity: self.activity,
@@ -75,7 +79,7 @@ extension ReadComicPageViewPresenter {
     }
 
     func getNextPage() -> ComicPageViewController? {
-        guard currentIndex != lastIndex else { return nil }
+        guard currentIndex != numOfImages - 1 else { return nil }
         let nextIndex = self.currentIndex + 1
         let vc = getPage(by: nextIndex)
         return vc
@@ -86,10 +90,11 @@ extension ReadComicPageViewPresenter {
     }
 
     func recordDisplayedPage(at index: Int) {
-        Realm.executeOnMainThread { _ in
-            self.activity.showCounts[index] += 1
+        Realm.executeOnMainThread { [weak self] _ in
+            guard let me = self else { return }
+            me.activity.showCounts[index] += 1
             let turn = Turn(index: index)
-            self.activity.turningHistory.append(turn)
+            me.activity.turningHistory.append(turn)
         }
     }
 
@@ -128,5 +133,15 @@ extension ReadComicPageViewPresenter {
     func movePage(to index: Int) {
         currentIndex = index
         view?.movePage(to: index)
+    }
+
+    func page(at index: Int) -> UIImage? {
+        let fileNameIndex = index + 1
+        guard let path = Bundle.main.path(forResource: "\(fileNameIndex)",
+            ofType: "jpg",
+            inDirectory: comic.name)
+        else { return nil }
+
+        return UIImage(contentsOfFile: path)
     }
 }

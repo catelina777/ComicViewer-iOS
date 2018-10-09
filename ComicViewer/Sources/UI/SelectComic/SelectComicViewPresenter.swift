@@ -79,7 +79,6 @@ extension SelectComicViewPresenter {
                                numOfPages: images.count)
         view?.showReadComic(user: user,
                             comic: comic,
-                            images: images,
                             index: comic.bookmarkIndex)
     }
 

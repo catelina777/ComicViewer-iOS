@@ -9,7 +9,6 @@
 import UIKit
 
 protocol ReadComicView: class {
-    func set(user: User, comic: Comic, images: [UIImage], index: Int)
     func showSelectComic()
     func showAllPages()
 }
@@ -40,7 +39,6 @@ final class ReadComicViewController: UIViewController, ReadComicView {
             self.readComicPageViewController = vc
             vc.set(user: presenter.user,
                    comic: presenter.comic,
-                   images: presenter.images,
                    currentIndex: presenter.index)
         }
     }
@@ -63,20 +61,17 @@ extension ReadComicViewController {
 
     func showAllPages() {
         let vc = R.storyboard.favoritePages.instantiateInitialViewController()!
-        vc.set(images: presenter.images,
-               comic: presenter.comic)
+        vc.set(comic: presenter.comic)
         let navigationVC = UINavigationController(rootViewController: vc)
         present(navigationVC,
                 animated: true,
                 completion: nil)
-        print("show all pages")
     }
 
-    func set(user: User, comic: Comic, images: [UIImage], index: Int) {
+    func set(user: User, comic: Comic, index: Int) {
         presenter = ReadComicViewPresenter(view: self,
                                            user: user,
                                            comic: comic,
-                                           images: images,
                                            index: index)
     }
 
