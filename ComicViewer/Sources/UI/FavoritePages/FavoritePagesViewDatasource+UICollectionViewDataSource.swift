@@ -18,7 +18,8 @@ extension FavoritePagesViewDatasource: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.favoriteComicCell,
                                                       for: indexPath)!
-        let image = presenter.image(at: indexPath.row)
+        guard let image = presenter.page(at: indexPath.row)
+        else { return cell }
         let isFavorite = presenter.like(at: indexPath.row)
         cell.set(image: image,
                  isFavorite: isFavorite)

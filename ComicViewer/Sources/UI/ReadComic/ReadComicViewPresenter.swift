@@ -9,10 +9,9 @@
 import UIKit
 
 protocol ReadComicPresenter: class {
-    init(view: ReadComicView, user: User, comic: Comic, images: [UIImage], index: Int)
+    init(view: ReadComicView, user: User, comic: Comic, index: Int)
     var user: User { get }
     var comic: Comic { get }
-    var images: [UIImage] { get }
     var index: Int { get }
     func showSelectComic()
     func showAllPages()
@@ -25,14 +24,12 @@ final class ReadComicViewPresenter: ReadComicPresenter {
 
     var user: User
     var comic: Comic
-    let images: [UIImage]
     var index: Int
 
-    init(view: ReadComicView, user: User, comic: Comic, images: [UIImage], index: Int) {
+    init(view: ReadComicView, user: User, comic: Comic, index: Int) {
         self.view = view
         self.user = user
         self.comic = comic
-        self.images = images
         self.index = index
     }
 }

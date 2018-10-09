@@ -22,7 +22,7 @@ extension ReadComicPageViewDatasource {
     func prepare(with pageViewController: UIPageViewController) {
         pageViewController.dataSource = self
         pageViewController.delegate = self
-        let vc = presenter.getCurrentPage()!
+        guard let vc = presenter.getCurrentPage() else { return }
         pageViewController.setViewControllers([vc],
                                               direction: .forward,
                                               animated: true,
