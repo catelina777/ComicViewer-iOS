@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4rO-dR-Muq">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,17 +15,17 @@
             <objects>
                 <viewController id="4rO-dR-Muq" customClass="ComicPageViewController" customModule="ComicViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cf9-Ex-yNM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comic placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="WGP-xN-Y84">
-                                <rect key="frame" x="0.0" y="29" width="375" height="609"/>
+                                <rect key="frame" x="-37.666666666666657" y="105.66666666666669" width="450.33333333333326" height="600.66666666666652"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="WGP-xN-Y84" secondAttribute="height" multiplier="8:13" id="WOk-CE-2wz"/>
+                                    <constraint firstAttribute="width" secondItem="WGP-xN-Y84" secondAttribute="height" multiplier="768:1025" id="WOk-CE-2wz"/>
                                 </constraints>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" translatesAutoresizingMaskIntoConstraints="NO" id="wkg-OY-Zhz">
-                                <rect key="frame" x="140.5" y="286.5" width="94" height="94"/>
+                                <rect key="frame" x="115.66666666666669" y="334" width="144" height="144"/>
                                 <color key="tintColor" red="0.92286843060000001" green="0.36965408919999998" blue="0.34507226940000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wkg-OY-Zhz" secondAttribute="height" multiplier="1:1" id="ks5-Rm-jMF"/>
@@ -34,14 +34,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="WGP-xN-Y84" firstAttribute="centerY" secondItem="cf9-Ex-yNM" secondAttribute="centerY" id="9Tn-Mt-Nl1"/>
-                            <constraint firstItem="WGP-xN-Y84" firstAttribute="leading" secondItem="cf9-Ex-yNM" secondAttribute="leading" id="AQO-2w-ZnL"/>
-                            <constraint firstItem="wkg-OY-Zhz" firstAttribute="width" secondItem="WGP-xN-Y84" secondAttribute="width" multiplier="0.25" id="NV7-Je-PpH"/>
+                            <constraint firstItem="WGP-xN-Y84" firstAttribute="centerX" secondItem="cf9-Ex-yNM" secondAttribute="centerX" id="URF-nJ-Dv3"/>
                             <constraint firstItem="wkg-OY-Zhz" firstAttribute="centerY" secondItem="cf9-Ex-yNM" secondAttribute="centerY" id="WbF-xK-ZLY"/>
                             <constraint firstItem="wkg-OY-Zhz" firstAttribute="centerX" secondItem="cf9-Ex-yNM" secondAttribute="centerX" id="YI6-bT-rZn"/>
+                            <constraint firstItem="WGP-xN-Y84" firstAttribute="centerY" secondItem="cf9-Ex-yNM" secondAttribute="centerY" id="c8B-dx-7kj"/>
                             <constraint firstItem="wkg-OY-Zhz" firstAttribute="centerX" secondItem="cf9-Ex-yNM" secondAttribute="centerX" id="jNZ-OO-l6E"/>
-                            <constraint firstAttribute="trailing" secondItem="WGP-xN-Y84" secondAttribute="trailing" id="oaz-bu-Lin"/>
-                            <constraint firstItem="WGP-xN-Y84" firstAttribute="centerX" secondItem="cf9-Ex-yNM" secondAttribute="centerX" id="rWk-4C-4We"/>
+                            <constraint firstItem="WGP-xN-Y84" firstAttribute="width" secondItem="cf9-Ex-yNM" secondAttribute="width" multiplier="1.2" id="kLA-YI-7wA"/>
                             <constraint firstItem="wkg-OY-Zhz" firstAttribute="centerY" secondItem="cf9-Ex-yNM" secondAttribute="centerY" id="vso-T1-bgb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ehM-nF-j0f"/>
@@ -53,11 +51,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5n-gP-cB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="-184"/>
+            <point key="canvasLocation" x="325.60000000000002" y="-184.85757121439281"/>
         </scene>
     </scenes>
     <resources>
         <image name="comic placeholder" width="1024" height="768"/>
-        <image name="favorite" width="96" height="96"/>
+        <image name="favorite" width="144" height="144"/>
     </resources>
 </document>

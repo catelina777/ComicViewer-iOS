@@ -11,7 +11,7 @@ import UIKit
 final class FavoritePagesViewDatasource: NSObject {
 
     let presenter: FavoritePagesPresenter
-    let itemSpacing: CGFloat = 16
+    let itemSpacing: CGFloat = 8
 
     init(presenter: FavoritePagesPresenter) {
         self.presenter = presenter
