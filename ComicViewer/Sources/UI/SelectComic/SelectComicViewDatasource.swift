@@ -11,7 +11,7 @@ import UIKit
 final class SelectComicViewDatasource: NSObject {
 
     let presenter: SelectComicPresenter
-    let itemSpacing: CGFloat = 16
+    let itemSpacing: CGFloat = 8
 
     init(presenter: SelectComicPresenter) {
         self.presenter = presenter

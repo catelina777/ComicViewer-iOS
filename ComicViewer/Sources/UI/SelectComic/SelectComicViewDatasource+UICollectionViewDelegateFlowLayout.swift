@@ -14,7 +14,7 @@ extension SelectComicViewDatasource: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.bounds.width - itemSpacing - itemSpacing * 2) / 2
-        let height = width * 1.6
+        let height = width * 1.33
         let size = CGSize(width: width,
                           height: height)
         return size
