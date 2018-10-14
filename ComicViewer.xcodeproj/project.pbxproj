@@ -10,10 +10,6 @@
 		0603F419210ABA7D008ED237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0603F418210ABA7D008ED237 /* AppDelegate.swift */; };
 		0603F420210ABA7E008ED237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0603F41F210ABA7E008ED237 /* Assets.xcassets */; };
 		0603F423210ABA7E008ED237 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0603F421210ABA7E008ED237 /* LaunchScreen.storyboard */; };
-		0605D3A62156425900868C49 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F44B210ABDC4008ED237 /* RealmSwift.framework */; };
-		0605D3A72156425900868C49 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F44B210ABDC4008ED237 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0605D3A82156425900868C49 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F449210ABDB9008ED237 /* Realm.framework */; };
-		0605D3A92156425900868C49 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F449210ABDB9008ED237 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		06164B2021632E9900C3B027 /* ReadComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164B1F21632E9900C3B027 /* ReadComicViewController.swift */; };
 		06164B2221632EAC00C3B027 /* ReadComicViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164B2121632EAC00C3B027 /* ReadComicViewPresenter.swift */; };
 		06164B2421632EB800C3B027 /* ReadComic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06164B2321632EB800C3B027 /* ReadComic.storyboard */; };
@@ -31,6 +27,8 @@
 		064F30B6214C2C4D001564F1 /* NSObjectProtocol.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F30B5214C2C4D001564F1 /* NSObjectProtocol.extension.swift */; };
 		066C09D32161228600B53006 /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C09D22161228600B53006 /* Motion.swift */; };
 		0679507C214D3BF700BC64DA /* Placeholders.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0679507B214D3BF700BC64DA /* Placeholders.xcassets */; };
+		06B3929321736BFC001F5DB5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F449210ABDB9008ED237 /* Realm.framework */; };
+		06B3929421736BFC001F5DB5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0603F44B210ABDC4008ED237 /* RealmSwift.framework */; };
 		06C5486C210AD0DB0081E54A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C5486B210AD0DB0081E54A /* R.generated.swift */; };
 		06C5486F210AD2E40081E54A /* SelectComic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06C5486E210AD2E40081E54A /* SelectComic.storyboard */; };
 		06C54871210AD2F30081E54A /* SelectComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C54870210AD2F30081E54A /* SelectComicViewController.swift */; };
@@ -59,21 +57,6 @@
 		06F2A8BE214FF0F9004D2C91 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F2A8BD214FF0F9004D2C91 /* Icons.xcassets */; };
 		DB775ED6C9DBCC973D856336 /* Pods_ComicViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2005EB82EC38FB4C0B487946 /* Pods_ComicViewer.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		0605D3AA2156425900868C49 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0605D3A92156425900868C49 /* Realm.framework in Embed Frameworks */,
-				0605D3A72156425900868C49 /* RealmSwift.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0603F415210ABA7D008ED237 /* ComicViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,8 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0605D3A82156425900868C49 /* Realm.framework in Frameworks */,
-				0605D3A62156425900868C49 /* RealmSwift.framework in Frameworks */,
+				06B3929321736BFC001F5DB5 /* Realm.framework in Frameworks */,
+				06B3929421736BFC001F5DB5 /* RealmSwift.framework in Frameworks */,
 				DB775ED6C9DBCC973D856336 /* Pods_ComicViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,7 +354,6 @@
 				0603F412210ABA7D008ED237 /* Frameworks */,
 				0603F413210ABA7D008ED237 /* Resources */,
 				BBD0754C6868E95A733B8C22 /* [CP] Embed Pods Frameworks */,
-				0605D3AA2156425900868C49 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -450,7 +432,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		0603F44D210ABEFE008ED237 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -464,6 +446,7 @@
 			);
 			name = Carthage;
 			outputFileListPaths = (
+				"$(SRCROOT)/carthage_output.xcfilelist",
 			);
 			outputPaths = (
 			);
