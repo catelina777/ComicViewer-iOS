@@ -100,7 +100,7 @@ extension ReadComicPageViewPresenter {
 
     func viewDidAppear() {
         let queue = OperationQueue()
-        motionManager.accelerometerUpdateInterval = 0.05
+        motionManager.accelerometerUpdateInterval = 0.025
         motionManager.startAccelerometerUpdates(to: queue) { [weak self] data, _ in
             guard let me = self else { return }
             me.accelerations.append(data!.acceleration)
