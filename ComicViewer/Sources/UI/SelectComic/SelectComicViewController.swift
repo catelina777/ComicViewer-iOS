@@ -9,9 +9,8 @@
 import UIKit
 
 protocol SelectComicView: class {
-    func set(user: User)
-    func prepareNavigationBar()
     func showReadComic(user: User, comic: Comic, index: Int)
+    func export()
 }
 
 final class SelectComicViewController: UIViewController, SelectComicView {
@@ -26,6 +25,10 @@ final class SelectComicViewController: UIViewController, SelectComicView {
         prepareNavigationBar()
         dataSource.prepare(with: collectionView)
     }
+
+    @objc func export() {
+        presenter.export()
+    }
 }
 
 extension SelectComicViewController {
@@ -39,6 +42,10 @@ extension SelectComicViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.2418628931, green: 0.2533941567, blue: 0.3443268239, alpha: 1)
         self.title = "Comics"
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save,
+                                          target: self,
+                                          action: #selector(export))
+        navigationItem.rightBarButtonItem = saveButton
     }
 
     func showReadComic(user: User, comic: Comic, index: Int) {

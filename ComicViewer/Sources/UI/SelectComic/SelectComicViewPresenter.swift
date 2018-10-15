@@ -16,6 +16,7 @@ protocol SelectComicPresenter: class {
     func coverImage(with name: String) -> UIImage
     func comicPages(with name: String) -> [UIImage]
     func showReadComic(name: String, index: Int)
+    func export()
 }
 
 final class SelectComicViewPresenter: SelectComicPresenter {
@@ -99,6 +100,87 @@ extension SelectComicViewPresenter {
                 realm.add(self.user, update: true)
             }
             return comic
+        }
+    }
+
+    func export() {
+        user.comics.forEach { comic in
+            comic.activities.enumerated().forEach { index, activity in
+                print(activity.date)
+                exportAcceleration(of: comic,
+                                   activity: activity,
+                                   index: index)
+
+                exportTransition(of: comic,
+                                 activity: activity,
+                                 index: index)
+
+                exportShowCount(of: comic,
+                                activity: activity,
+                                index: index)
+
+                exportLike(of: comic,
+                           activity: activity,
+                           index: index)
+            }
+        }
+    }
+
+    private func exportAcceleration(of comic: Comic, activity: Activity, index: Int) {
+        let fileName = "\(user.name)_\(comic.name)_activity\(index)_acceleration.csv"
+        var csv = "locX,locY,locZ,epoch_time\n"
+        activity.motions.forEach {
+            let newColumn = "\($0.accX),\($0.accY),\($0.accZ),\($0.date.timeIntervalSince1970)\n"
+            csv.append(newColumn)
+        }
+        write(csv: csv,
+              fileName: fileName)
+    }
+
+    private func exportTransition(of comic: Comic, activity: Activity, index: Int) {
+        let fileName = "\(user.name)_\(comic.name)_activity\(index)_transition.csv"
+        var csv = "index,epoch_time\n"
+        activity.turningHistory.forEach {
+            let newColumn = "\($0.index),\($0.date.timeIntervalSince1970)\n"
+            csv.append(newColumn)
+        }
+        write(csv: csv,
+              fileName: fileName)
+    }
+
+    private func exportShowCount(of comic: Comic, activity: Activity, index: Int) {
+        let fileName = "\(user.name)_\(comic.name)_activity\(index)_showCount.csv"
+        var csv = "index,count\n"
+        activity.showCounts.enumerated().forEach {
+            let newColumn = "\($0+1),\($1)\n"
+            csv.append(newColumn)
+        }
+        write(csv: csv,
+              fileName: fileName)
+    }
+
+    private func exportLike(of comic: Comic, activity: Activity, index: Int) {
+        let fileName = "\(user.name)_\(comic.name)_activity\(index)_like.csv"
+        var csv = "index,locX,locY,epoch_time\n"
+        activity.likes.forEach {
+            let newColumn = "\($0.index),\($0.locX),\($0.locY),\($0.date.timeIntervalSince1970)\n"
+            csv.append(newColumn)
+        }
+        write(csv: csv,
+              fileName: fileName)
+    }
+
+    private func write(csv: String, fileName: String) {
+        let paths = FileManager.default.urls(for: .documentDirectory,
+                                             in: .userDomainMask)
+        let path = paths[0].appendingPathComponent(fileName)
+        do {
+            try csv.write(to: path,
+                          atomically: true,
+                          encoding: .utf8)
+            print("save success \(fileName)")
+        } catch let error {
+            print(error)
         }
     }
 }
