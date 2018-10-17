@@ -25,6 +25,7 @@ protocol ReadComicPagePresenter: class {
     func set(isTransitioning: Bool)
     func movePage(to index: Int)
     func page(at index: Int) -> UIImage?
+    func didTransition()
 }
 
 final class ReadComicPageViewPresenter: ReadComicPagePresenter {
@@ -100,6 +101,21 @@ extension ReadComicPageViewPresenter {
     }
 
     func viewDidAppear() {
+        startObserve()
+    }
+
+    func viewWillDisappear() {
+        stopObserve()
+        save()
+    }
+
+    func didTransition() {
+        stopObserve()
+        save()
+        startObserve()
+    }
+
+    private func startObserve() {
         let queue = OperationQueue()
         motionManager.accelerometerUpdateInterval = 0.025
         motionManager.startAccelerometerUpdates(to: queue) { [weak self] data, _ in
@@ -110,19 +126,24 @@ extension ReadComicPageViewPresenter {
         }
     }
 
-    func viewWillDisappear() {
+    private func stopObserve() {
         if motionManager.isAccelerometerActive {
             motionManager.stopAccelerometerUpdates()
-            Realm.executeOnMainThread { [weak self] _ in
-                guard let me = self else { return }
-                zip(me.accelerations, me.accelerationsDate).forEach {
-                    let motion = Motion(accX: $0.0.x,
-                                        accY: $0.0.y,
-                                        accZ: $0.0.z,
-                                        date: $0.1)
-                    me.activity.motions.append(motion)
-                }
+        }
+    }
+
+    private func save() {
+        Realm.executeOnMainThread { [weak self] _ in
+            guard let me = self else { return }
+            zip(me.accelerations, me.accelerationsDate).forEach {
+                let motion = Motion(accX: $0.0.x,
+                                    accY: $0.0.y,
+                                    accZ: $0.0.z,
+                                    date: $0.1)
+                me.activity.motions.append(motion)
             }
+            me.accelerations.removeAll()
+            me.accelerationsDate.removeAll()
         }
     }
 

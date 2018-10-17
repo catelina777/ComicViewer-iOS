@@ -20,6 +20,7 @@ extension ReadComicPageViewDatasource: UIPageViewControllerDelegate {
             let index = vc.presenter.index
             presenter.updateCurrentIndex(index: index)
             presenter.recordDisplayedPage(at: index)
+            presenter.didTransition()
             print("transitioned to \(index)")
         }
         presenter.set(isTransitioning: false)
