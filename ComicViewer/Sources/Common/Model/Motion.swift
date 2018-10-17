@@ -16,10 +16,11 @@ class Motion: Object {
     @objc dynamic var accZ: Double = 0
     @objc dynamic var date = Date()
 
-    convenience init(accX: Double, accY: Double, accZ: Double) {
+    convenience init(accX: Double, accY: Double, accZ: Double, date: Date) {
         self.init()
         self.accX = accX
         self.accY = accY
         self.accZ = accZ
+        self.date = date
     }
 }
