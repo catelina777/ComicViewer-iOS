@@ -41,7 +41,7 @@ extension SelectComicViewController {
     func prepareNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.2418628931, green: 0.2533941567, blue: 0.3443268239, alpha: 1)
-        self.title = "Comics"
+        self.title = presenter.userName
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save,
                                           target: self,
                                           action: #selector(export))

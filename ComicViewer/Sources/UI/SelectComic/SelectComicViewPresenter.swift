@@ -12,6 +12,7 @@ import RealmSwift
 protocol SelectComicPresenter: class {
     init(view: SelectComicView, user: User)
     var numOfComic: Int { get }
+    var userName: String { get }
     func comicName(at index: Int) -> String
     func coverImage(with name: String) -> UIImage
     func comicPages(with name: String) -> [UIImage]
@@ -39,6 +40,10 @@ extension SelectComicViewPresenter {
 
     var numOfComic: Int {
         return comicNames.count
+    }
+
+    var userName: String {
+        return user.name
     }
 
     func comicName(at index: Int) -> String {
