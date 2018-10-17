@@ -36,6 +36,7 @@ final class ReadComicPageViewPresenter: ReadComicPagePresenter {
     private var currentIndex: Int
     lazy var motionManager = CMMotionManager()
     private var accelerations: [CMAcceleration] = []
+    private var accelerationsDate: [Date] = []
 
     var isTransitioning = false
 
@@ -104,6 +105,8 @@ extension ReadComicPageViewPresenter {
         motionManager.startAccelerometerUpdates(to: queue) { [weak self] data, _ in
             guard let me = self else { return }
             me.accelerations.append(data!.acceleration)
+            let date = Date()
+            me.accelerationsDate.append(date)
         }
     }
 
@@ -112,10 +115,11 @@ extension ReadComicPageViewPresenter {
             motionManager.stopAccelerometerUpdates()
             Realm.executeOnMainThread { [weak self] _ in
                 guard let me = self else { return }
-                me.accelerations.forEach { acceleration in
-                    let motion = Motion(accX: acceleration.x,
-                                        accY: acceleration.y,
-                                        accZ: acceleration.z)
+                zip(me.accelerations, me.accelerationsDate).forEach {
+                    let motion = Motion(accX: $0.0.x,
+                                        accY: $0.0.y,
+                                        accZ: $0.0.z,
+                                        date: $0.1)
                     me.activity.motions.append(motion)
                 }
             }
