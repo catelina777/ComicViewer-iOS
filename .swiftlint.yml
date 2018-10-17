@@ -4,4 +4,5 @@ excluded:
   - R.generated.swift
 
 disabled_rules:
-  - identifier_name	
+  - identifier_name
+  - force_try	
