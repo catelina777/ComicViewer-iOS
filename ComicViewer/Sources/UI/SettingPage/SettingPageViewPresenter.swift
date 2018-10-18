@@ -11,15 +11,26 @@ import RealmSwift
 
 protocol SettingPagePresenter: class {
     init(view: SettingPageView)
-    func showSelectComic()
+    func showSelectComic(user: User)
     func validateName(name: String?) -> Bool
-    func setUser(by name: String)
+    func user(by name: String) -> User
+    func user(at index: Int) -> User
+    var numOfUsers: Int { get }
+    func reloadData()
 }
 
 final class SettingPageViewPresenter: SettingPagePresenter {
 
     private weak var view: SettingPageView?
-    private var user: User!
+    lazy var users: Results<User> = {
+        let realm = try! Realm()
+        let objects = realm.objects(User.self)
+        return objects
+    }()
+
+    var numOfUsers: Int {
+        return users.count
+    }
 
     init(view: SettingPageView) {
         self.view = view
@@ -28,8 +39,8 @@ final class SettingPageViewPresenter: SettingPagePresenter {
 
 extension SettingPageViewPresenter {
 
-    func showSelectComic() {
-        view?.showSelectComic(with: self.user)
+    func showSelectComic(user: User) {
+        view?.showSelectComic(with: user)
     }
 
     func validateName(name: String?) -> Bool {
@@ -39,18 +50,27 @@ extension SettingPageViewPresenter {
         return true
     }
 
-    func setUser(by name: String) {
-        Realm.executeOnMainThread { [weak self] realm in
-            guard let me = self else { return }
-            me.user = realm.object(ofType: User.self,
-                                     forPrimaryKey: name)
-            if me.user == nil {
-                me.user = User(name: name)
-                realm.add(me.user)
+    func user(at index: Int) -> User {
+        return users[index]
+    }
+
+    func reloadData() {
+        view?.reloadData()
+    }
+
+    func user(by name: String) -> User {
+        var _user: User!
+        Realm.executeOnMainThread { realm in
+            _user = realm.object(ofType: User.self,
+                                 forPrimaryKey: name)
+            if _user == nil {
+                _user = User(name: name)
+                realm.add(_user)
                 print("I created because -\(name)- does not exist")
             } else {
                 print("I don't create because -\(name)- existed")
             }
         }
+        return _user
     }
 }
