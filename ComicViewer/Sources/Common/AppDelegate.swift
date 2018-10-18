@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         prepareUI()
         print(getRealmPath())
+        migrate()
         return true
     }
 }
@@ -34,5 +35,15 @@ extension AppDelegate {
 
     private func getRealmPath() -> URL {
         return Realm.Configuration.defaultConfiguration.fileURL!
+    }
+
+    private func migrate() {
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1) {
+                }
+        })
+        Realm.Configuration.defaultConfiguration = config
     }
 }
