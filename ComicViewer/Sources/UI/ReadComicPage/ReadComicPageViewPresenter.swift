@@ -37,6 +37,7 @@ final class ReadComicPageViewPresenter: ReadComicPagePresenter {
     private var currentIndex: Int
     lazy var motionManager = CMMotionManager()
     private var accelerations: [CMAcceleration] = []
+    private var gyros: [CMRotationRate] = []
     private var accelerationsDate: [Date] = []
 
     var isTransitioning = false
@@ -116,11 +117,13 @@ extension ReadComicPageViewPresenter {
     }
 
     private func startObserve() {
-        let queue = OperationQueue()
-        motionManager.accelerometerUpdateInterval = 0.025
-        motionManager.startAccelerometerUpdates(to: queue) { [weak self] data, _ in
+        let deviceQueue = OperationQueue()
+        motionManager.deviceMotionUpdateInterval = 0.025
+        motionManager.startDeviceMotionUpdates(to: deviceQueue) { [weak self] motionData, _ in
             guard let me = self else { return }
-            me.accelerations.append(data!.acceleration)
+            guard let data = motionData else { return }
+            me.accelerations.append(data.userAcceleration)
+            me.gyros.append(data.rotationRate)
             let date = Date()
             me.accelerationsDate.append(date)
         }
@@ -135,14 +138,14 @@ extension ReadComicPageViewPresenter {
     private func save() {
         Realm.executeOnMainThread { [weak self] _ in
             guard let me = self else { return }
-            zip(me.accelerations, me.accelerationsDate).forEach {
-                let motion = Motion(accX: $0.0.x,
-                                    accY: $0.0.y,
-                                    accZ: $0.0.z,
-                                    date: $0.1)
-                me.activity.motions.append(motion)
+            let motions = zip(me.accelerations, me.gyros).enumerated().map { index, element in
+                Motion(accX: element.0.x, accY: element.0.y, accZ: element.0.z,
+                       gyroX: element.1.x, gyroY: element.1.y, gyroZ: element.1.z,
+                       date: me.accelerationsDate[index])
             }
+            me.activity.motions.append(objectsIn: motions)
             me.accelerations.removeAll()
+            me.gyros.removeAll()
             me.accelerationsDate.removeAll()
         }
     }

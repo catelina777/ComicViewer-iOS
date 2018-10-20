@@ -13,7 +13,43 @@
 		06164B2021632E9900C3B027 /* ReadComicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164B1F21632E9900C3B027 /* ReadComicViewController.swift */; };
 		06164B2221632EAC00C3B027 /* ReadComicViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164B2121632EAC00C3B027 /* ReadComicViewPresenter.swift */; };
 		06164B2421632EB800C3B027 /* ReadComic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06164B2321632EB800C3B027 /* ReadComic.storyboard */; };
+		062325B6217B1511009708E1 /* Outputtable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062325B5217B1511009708E1 /* Outputtable.swift */; };
 		063E5235215E0D290063096F /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063E5234215E0D290063096F /* Turn.swift */; };
+		0641C21821784B7B00B5C2C8 /* 夜は短し歩けよ乙女_1 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C1F521784B7800B5C2C8 /* 夜は短し歩けよ乙女_1 */; };
+		0641C21921784B7B00B5C2C8 /* 彼方のアストラ_3 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C1F621784B7800B5C2C8 /* 彼方のアストラ_3 */; };
+		0641C21A21784B7B00B5C2C8 /* とんがり帽子のアトリエ_1 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C1F721784B7800B5C2C8 /* とんがり帽子のアトリエ_1 */; };
+		0641C21B21784B7B00B5C2C8 /* とっかぶ_2 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C1F821784B7800B5C2C8 /* とっかぶ_2 */; };
+		0641C21C21784B7B00B5C2C8 /* とっかぶ_1 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C1F921784B7800B5C2C8 /* とっかぶ_1 */; };
+		0641C21D21784B7B00B5C2C8 /* 彼方のアストラ_2 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C1FA21784B7800B5C2C8 /* 彼方のアストラ_2 */; };
+		0641C21E21784B7B00B5C2C8 /* Green_2 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C1FB21784B7800B5C2C8 /* Green_2 */; };
+		0641C21F21784B7B00B5C2C8 /* とっかぶ_3 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C1FC21784B7800B5C2C8 /* とっかぶ_3 */; };
+		0641C22021784B7B00B5C2C8 /* Green_1 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C1FD21784B7800B5C2C8 /* Green_1 */; };
+		0641C22121784B7B00B5C2C8 /* Green_4 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C1FE21784B7800B5C2C8 /* Green_4 */; };
+		0641C22221784B7B00B5C2C8 /* 夜は短し歩けよ乙女_2 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C1FF21784B7800B5C2C8 /* 夜は短し歩けよ乙女_2 */; };
+		0641C22321784B7B00B5C2C8 /* 心が叫びたがってるんだ_1 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20021784B7800B5C2C8 /* 心が叫びたがってるんだ_1 */; };
+		0641C22421784B7B00B5C2C8 /* Green_3 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20121784B7800B5C2C8 /* Green_3 */; };
+		0641C22521784B7B00B5C2C8 /* おもたせしました_1 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20221784B7900B5C2C8 /* おもたせしました_1 */; };
+		0641C22621784B7B00B5C2C8 /* とんがり帽子のアトリエ_3 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20321784B7900B5C2C8 /* とんがり帽子のアトリエ_3 */; };
+		0641C22721784B7B00B5C2C8 /* とんがり帽子のアトリエ_2 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20421784B7900B5C2C8 /* とんがり帽子のアトリエ_2 */; };
+		0641C22821784B7B00B5C2C8 /* ディスコミ_1 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20521784B7900B5C2C8 /* ディスコミ_1 */; };
+		0641C22921784B7B00B5C2C8 /* とっかぶ_4 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20621784B7900B5C2C8 /* とっかぶ_4 */; };
+		0641C22A21784B7B00B5C2C8 /* ブルーピリオド_1 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20721784B7900B5C2C8 /* ブルーピリオド_1 */; };
+		0641C22B21784B7B00B5C2C8 /* 心が叫びたがってるんだ_3 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20821784B7900B5C2C8 /* 心が叫びたがってるんだ_3 */; };
+		0641C22C21784B7B00B5C2C8 /* 彼方のアストラ_4 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20921784B7900B5C2C8 /* 彼方のアストラ_4 */; };
+		0641C22D21784B7B00B5C2C8 /* おもたせしました_2 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20A21784B7900B5C2C8 /* おもたせしました_2 */; };
+		0641C22E21784B7B00B5C2C8 /* 心が叫びたがってるんだ_4 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20B21784B7900B5C2C8 /* 心が叫びたがってるんだ_4 */; };
+		0641C22F21784B7B00B5C2C8 /* ディスコミ_3 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20C21784B7900B5C2C8 /* ディスコミ_3 */; };
+		0641C23021784B7B00B5C2C8 /* ブルーピリオド_3 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20D21784B7A00B5C2C8 /* ブルーピリオド_3 */; };
+		0641C23121784B7B00B5C2C8 /* 彼方のアストラ_1 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20E21784B7A00B5C2C8 /* 彼方のアストラ_1 */; };
+		0641C23221784B7B00B5C2C8 /* 彼方のアストラ_5 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C20F21784B7A00B5C2C8 /* 彼方のアストラ_5 */; };
+		0641C23321784B7B00B5C2C8 /* おもたせしました_3 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C21021784B7A00B5C2C8 /* おもたせしました_3 */; };
+		0641C23421784B7B00B5C2C8 /* ディスコミ_2 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C21121784B7A00B5C2C8 /* ディスコミ_2 */; };
+		0641C23521784B7B00B5C2C8 /* 夜は短し歩けよ乙女_3 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C21221784B7A00B5C2C8 /* 夜は短し歩けよ乙女_3 */; };
+		0641C23621784B7B00B5C2C8 /* 心が叫びたがってるんだ_2 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C21321784B7A00B5C2C8 /* 心が叫びたがってるんだ_2 */; };
+		0641C23721784B7B00B5C2C8 /* ひきだしにテラリウム in Resources */ = {isa = PBXBuildFile; fileRef = 0641C21421784B7A00B5C2C8 /* ひきだしにテラリウム */; };
+		0641C23821784B7B00B5C2C8 /* とんがり帽子のアトリエ_4 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C21521784B7B00B5C2C8 /* とんがり帽子のアトリエ_4 */; };
+		0641C23921784B7B00B5C2C8 /* 転生したらヤムチャだった件 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C21621784B7B00B5C2C8 /* 転生したらヤムチャだった件 */; };
+		0641C23A21784B7B00B5C2C8 /* ブルーピリオド_2 in Resources */ = {isa = PBXBuildFile; fileRef = 0641C21721784B7B00B5C2C8 /* ブルーピリオド_2 */; };
 		064F309C214C18A6001564F1 /* ReadComicPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309B214C18A6001564F1 /* ReadComicPageViewController.swift */; };
 		064F309E214C18B1001564F1 /* ReadComicPageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309D214C18B1001564F1 /* ReadComicPageViewPresenter.swift */; };
 		064F30A0214C18DD001564F1 /* ReadComicPageViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F309F214C18DD001564F1 /* ReadComicPageViewDatasource.swift */; };
@@ -70,6 +106,7 @@
 		06164B1F21632E9900C3B027 /* ReadComicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicViewController.swift; sourceTree = "<group>"; };
 		06164B2121632EAC00C3B027 /* ReadComicViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicViewPresenter.swift; sourceTree = "<group>"; };
 		06164B2321632EB800C3B027 /* ReadComic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReadComic.storyboard; sourceTree = "<group>"; };
+		062325B5217B1511009708E1 /* Outputtable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outputtable.swift; sourceTree = "<group>"; };
 		063E5234215E0D290063096F /* Turn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		064F309B214C18A6001564F1 /* ReadComicPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicPageViewController.swift; sourceTree = "<group>"; };
 		064F309D214C18B1001564F1 /* ReadComicPageViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadComicPageViewPresenter.swift; sourceTree = "<group>"; };
@@ -209,6 +246,7 @@
 				06C5486B210AD0DB0081E54A /* R.generated.swift */,
 				06F2A8B0214FC87A004D2C91 /* Model */,
 				064F30B4214C2C36001564F1 /* Extension */,
+				062325B4217B1468009708E1 /* Protocol */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -228,6 +266,14 @@
 			children = (
 			);
 			path = Comics;
+			sourceTree = "<group>";
+		};
+		062325B4217B1468009708E1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				062325B5217B1511009708E1 /* Outputtable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		064F309A214C1817001564F1 /* ReadComicPage */ = {
@@ -548,6 +594,7 @@
 				064F30A9214C1D24001564F1 /* SelectComicViewDatasource+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				064F30A7214C1D05001564F1 /* SelectComicViewDatasource+UICollectionViewDelegate.swift in Sources */,
 				06EE53BA216352560036204F /* FavoritePagesViewPresenter.swift in Sources */,
+				062325B6217B1511009708E1 /* Outputtable.swift in Sources */,
 				06F2A8B8214FC8CE004D2C91 /* Activity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
